@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
+@import "tailwindcss";
+
+/* ─── Quiet Editorial Design Tokens ────────────────────────── */
+@theme {
+  /* Colors: Warm Neutrals (Calm, Reflective & Understated) */
+  --color-warm-50: #faf9f6;   /* Cream off-white background */
+  --color-warm-100: #f4f1ea;  /* Warm surface card background */
+  --color-warm-200: #e6e1d5;  /* Soft thin border neutral */
+  --color-warm-300: #d4ccbc;  /* Muted text subtle */
+  --color-warm-600: #6b6559;  /* Secondary text warm gray */
+  --color-warm-700: #4a463d;  /* Body text warm charcoal */
+  --color-warm-900: #1c1b18;  /* Editorial heading deep charcoal */
+
+  /* Dark Mode Warm Neutrals */
+  --color-dark-bg: #121110;    /* Warm deep dark background */
+  --color-dark-surface: #1a1917; /* Warm dark surface */
+  --color-dark-border: #2a2825;  /* Subtle thin border dark */
+  --color-dark-muted: #8c857b;   /* Muted text dark */
+  --color-dark-text: #ece8df;    /* Body text dark */
+
+  /* Accent: Muted Amber / Terracotta (Restrained, Not Neon) */
+  --color-accent-warm: #c86d4b;
+  --color-accent-amber: #d99b26;
+
+  /* Typography Scale */
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ─── Global Editorial Base Styles ─────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-warm-50);
+    color: var(--color-warm-900);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+  }
+
+  h1, h2, h3, .font-serif-editorial {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+
+  /* Thin border utility for Quiet Editorial aesthetic */
+  .border-thin {
+    border-width: 1px;
+    border-color: var(--color-warm-200);
+  }
+  .dark .border-thin {
+    border-color: var(--color-dark-border);
+  }
+}
