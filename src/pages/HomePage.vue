@@ -4,14 +4,19 @@
       <!-- ─── Header & Theme Toggle ────────────────────────────── -->
       <header class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-warm-200 dark:border-dark-border mb-12">
         <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-warm-600 dark:text-dark-muted block mb-2">
-            01 / Design System & Tokens Showcase
-          </span>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs font-mono uppercase tracking-widest text-warm-600 dark:text-dark-muted">
+              01 / Design System Showcase
+            </span>
+            <BaseBadge variant="outline" dot dotColor="emerald">
+              • AVAILABLE FOR SELECT PROJECTS
+            </BaseBadge>
+          </div>
           <h1 class="text-3xl md:text-5xl font-serif tracking-tight text-warm-900 dark:text-dark-text">
             Quiet Editorial Baseline
           </h1>
           <p class="text-sm md:text-base font-light text-warm-700 dark:text-dark-muted mt-2 max-w-xl">
-            Sistem desain visual terkurasi untuk portofolio Ilham Mustaqim. Berfokus pada tipografi serif besar, warna warm neutral, dan garis pemisah 1px.
+            Sistem desain visual terkurasi untuk portofolio Ilham Mustaqim, terinspirasi dari referensi majalah digital monokrom & tipografi presisi.
           </p>
         </div>
 
@@ -32,7 +37,7 @@
 
       <!-- ─── Section 1: Typography Scale ──────────────────────── -->
       <section class="mb-16">
-        <BaseDivider number="1" label="Typography Scale & Fonts" align="left" spacing="sm" />
+        <BaseDivider number="1" label="Typography Scale & Outline Text (Referensi 1)" align="left" spacing="sm" />
 
         <div class="space-y-6 bg-warm-100/50 dark:bg-dark-surface/50 p-6 md:p-8 rounded-lg border-thin">
           <div>
@@ -44,14 +49,13 @@
             </p>
           </div>
 
-          <BaseDivider spacing="sm" />
-
+          <!-- Outline Text Demo (Terinspirasi Referensi 1 - Nathan Stampfli) -->
           <div>
             <span class="text-[0.6875rem] font-mono text-warm-600 dark:text-dark-muted block mb-1">
-              NEWSREADER SERIF — DISPLAY LG
+              EDITORIAL OUTLINE TEXT (INSPIRASI REFERENSI 1)
             </span>
-            <p class="text-display-lg text-warm-900 dark:text-dark-text">
-              Reflective & Thoughtful Exploration
+            <p class="text-display-xl font-serif tracking-tight text-editorial-outline">
+              CREATIVE DEVELOPER
             </p>
           </div>
 
@@ -126,7 +130,7 @@
 
       <!-- ─── Section 3: Base Component Showcase ──────────────── -->
       <section class="mb-16">
-        <BaseDivider number="3" label="Base UI Components" align="left" spacing="sm" />
+        <BaseDivider number="3" label="Base UI Components (Pill Badges & Buttons)" align="left" spacing="sm" />
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- BaseButton Variants -->
@@ -141,7 +145,12 @@
             <div class="space-y-4">
               <div class="flex flex-wrap items-center gap-3">
                 <BaseButton variant="primary" size="sm">Primary SM</BaseButton>
-                <BaseButton variant="primary" size="md">Primary MD</BaseButton>
+                <BaseButton variant="primary" size="md">
+                  VIEW PROJECTS
+                  <template #iconRight>
+                    <ArrowUpRight class="w-4 h-4" />
+                  </template>
+                </BaseButton>
                 <BaseButton variant="outline" size="md">Outline MD</BaseButton>
               </div>
 
@@ -166,27 +175,27 @@
             </div>
           </BaseCard>
 
-          <!-- BaseBadge Variants -->
+          <!-- BaseBadge Capsule Variants (Terinspirasi Referensi 4) -->
           <BaseCard hoverable>
             <template #header>
               <div class="flex items-center justify-between">
-                <h3 class="text-xl font-serif text-warm-900 dark:text-dark-text">BaseBadge</h3>
-                <BaseBadge variant="accent">Understated</BaseBadge>
+                <h3 class="text-xl font-serif text-warm-900 dark:text-dark-text">BaseBadge (Capsule Shapes)</h3>
+                <BaseBadge variant="accent">Pill Style</BaseBadge>
               </div>
             </template>
 
             <div class="space-y-4">
               <div class="flex flex-wrap items-center gap-2">
-                <BaseBadge variant="neutral">Vue 3.5</BaseBadge>
-                <BaseBadge variant="outline">Tailwind v4</BaseBadge>
-                <BaseBadge variant="subtle">Quiet Editorial</BaseBadge>
-                <BaseBadge variant="accent">Featured</BaseBadge>
+                <BaseBadge variant="neutral">VUE 3.5</BaseBadge>
+                <BaseBadge variant="outline">TAILWIND V4</BaseBadge>
+                <BaseBadge variant="subtle">QUIET EDITORIAL</BaseBadge>
+                <BaseBadge variant="accent">FEATURED</BaseBadge>
               </div>
 
               <div class="flex flex-wrap items-center gap-3 pt-2">
-                <BaseBadge variant="neutral" dot dotColor="emerald">Available for work</BaseBadge>
-                <BaseBadge variant="outline" dot dotColor="amber">Learning Rust</BaseBadge>
-                <BaseBadge variant="subtle" dot dotColor="terracotta">Reflective Mode</BaseBadge>
+                <BaseBadge variant="neutral" dot dotColor="emerald">AVAILABLE FOR WORK</BaseBadge>
+                <BaseBadge variant="outline" dot dotColor="amber">LEARNING RUST</BaseBadge>
+                <BaseBadge variant="subtle" dot dotColor="terracotta">REFLECTIVE MODE</BaseBadge>
               </div>
             </div>
           </BaseCard>
@@ -195,7 +204,7 @@
 
       <!-- ─── Section 4: Card Surface Variants ─────────────── -->
       <section class="mb-16">
-        <BaseDivider number="4" label="BaseCard Surfaces & Grids" align="left" spacing="sm" />
+        <BaseDivider number="4" label="BaseCard Surfaces & Grids (Referensi 2)" align="left" spacing="sm" />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <BaseCard variant="default" hoverable>
@@ -248,7 +257,7 @@ import {
   BaseBadge,
   BaseDivider
 } from '@/components/base'
-import { Sun, Moon, ArrowRight, ExternalLink } from 'lucide-vue-next'
+import { Sun, Moon, ArrowRight, ArrowUpRight, ExternalLink } from 'lucide-vue-next'
 
 const { isDark, toggleTheme } = useTheme()
 </script>

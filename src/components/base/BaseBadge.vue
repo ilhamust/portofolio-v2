@@ -1,7 +1,8 @@
 <template>
   <span
     :class="[
-      'inline-flex items-center gap-1.5 rounded border-thin transition-colors duration-200 select-none',
+      'inline-flex items-center gap-1.5 border-thin transition-colors duration-200 select-none',
+      pill ? 'rounded-full' : 'rounded',
       mono ? 'font-mono tracking-wider' : 'font-sans tracking-normal font-medium',
       variantClasses[variant] || variantClasses.neutral,
       sizeClasses[size] || sizeClasses.sm
@@ -44,6 +45,13 @@ const props = defineProps({
     validator: (val) => ['sm', 'md'].includes(val)
   },
   /**
+   * Bentuk capsule/pill (rounded-full) terinspirasi Referensi 4
+   */
+  pill: {
+    type: Boolean,
+    default: true
+  },
+  /**
    * Apakah menampilkan titik penanda status (dot)
    */
   dot: {
@@ -75,8 +83,8 @@ const variantClasses = {
 }
 
 const sizeClasses = {
-  sm: 'text-[0.6875rem] px-2 py-0.5',
-  md: 'text-xs px-2.5 py-1'
+  sm: 'text-[0.6875rem] px-2.5 py-0.5',
+  md: 'text-xs px-3 py-1'
 }
 
 const dotBgClasses = {

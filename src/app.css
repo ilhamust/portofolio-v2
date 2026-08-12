@@ -83,7 +83,7 @@
   }
 }
 
-/* ─── Custom Editorial Utilities ───────────────────────────── */
+/* ─── Custom Editorial Utilities (Inspired by Referensi 1 - 5) ── */
 @utility border-thin {
   border-width: 1px;
   border-color: var(--color-warm-200);
@@ -116,6 +116,18 @@
   &:where(.dark, .dark *) {
     color: var(--color-dark-muted);
   }
+}
+
+/* Outline Text Effect (Inspirasi Gambar Referensi 1 - Nathan Stampfli) */
+@utility text-editorial-outline {
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+/* Vertical Text Utility (Inspirasi Gambar Referensi 1 - Vertical Metadata) */
+@utility writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
 /* Understated Link Underline Slide Animation */
