@@ -1,30 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
 @import "tailwindcss";
 
 /* ─── Quiet Editorial Design Tokens (Tailwind CSS v4) ──────── */
 @theme {
-  /* Colors: Warm Neutrals (Calm, Reflective & Understated) */
+  /* Colors: Warm Dark Editorial Base (Terinspirasi Referensi 1) */
   --color-warm-50: #faf9f6;   /* Cream off-white background */
-  --color-warm-100: #f4f1ea;  /* Warm surface card background */
-  --color-warm-200: #e6e1d5;  /* Soft thin border neutral */
-  --color-warm-300: #d4ccbc;  /* Muted text subtle / hover border */
-  --color-warm-400: #b5ac9b;  /* Subtle icon gray */
+  --color-warm-100: #f4f1ea;  /* Surface card background light */
+  --color-warm-200: #e6e1d5;  /* Soft thin border light */
+  --color-warm-300: #d4ccbc;  /* Muted text subtle light */
   --color-warm-600: #6b6559;  /* Secondary text warm gray */
   --color-warm-700: #4a463d;  /* Body text warm charcoal */
   --color-warm-900: #1c1b18;  /* Editorial heading deep charcoal */
 
-  /* Dark Mode Warm Neutrals */
-  --color-dark-bg: #121110;      /* Warm deep dark background */
-  --color-dark-surface: #1a1917; /* Warm dark surface */
-  --color-dark-border: #2a2825;  /* Subtle thin border dark */
-  --color-dark-hover: #383531;   /* Hover border dark */
-  --color-dark-muted: #8c857b;   /* Muted text dark */
-  --color-dark-text: #ece8df;    /* Body text dark */
+  /* Dark Charcoal Base (Default Aesthetic Referensi 1) */
+  --color-dark-bg: #0d0d0d;      /* Deep dark charcoal background */
+  --color-dark-surface: #141414; /* Elevated dark card surface */
+  --color-dark-border: #222222;  /* Subtle 1px thin border dark */
+  --color-dark-hover: #2e2e2e;   /* Hover border dark */
+  --color-dark-muted: #888888;   /* Muted text gray dark */
+  --color-dark-text: #f4f1ea;    /* Body text crisp warm white */
 
-  /* Accent: Muted Terracotta & Amber (Restrained, Not Flashy) */
-  --color-accent-warm: #c86d4b;
-  --color-accent-amber: #d99b26;
-  --color-accent-muted: rgba(200, 109, 75, 0.15);
+  /* Primary Accent: Deep Navy Blue (Warna Aksen Kustom Ilham) */
+  --color-accent-navy: #1d4ed8;       /* Deep Royal/Navy Blue */
+  --color-accent-navy-hover: #2563eb; /* Vibrant Navy Blue hover */
+  --color-accent-navy-muted: rgba(29, 78, 216, 0.15);
 
   /* Typography Scale */
   --font-serif: "Newsreader", Georgia, serif;
@@ -40,36 +39,32 @@
 /* ─── Global Editorial Base Styles ─────────────────────────── */
 @layer base {
   *, ::before, ::after {
-    border-color: var(--color-warm-200);
-  }
-
-  html.dark *, html.dark ::before, html.dark ::after {
     border-color: var(--color-dark-border);
   }
 
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
-    background-color: var(--color-warm-50);
-    color: var(--color-warm-900);
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
     transition: background-color 0.3s ease, color 0.3s ease;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
-  html.dark {
-    background-color: var(--color-dark-bg);
-    color: var(--color-dark-text);
-  }
-
-  ::selection {
-    background-color: var(--color-warm-200);
+  /* Support Warm Light Mode Option */
+  html.light {
+    background-color: var(--color-warm-50);
     color: var(--color-warm-900);
   }
 
-  html.dark ::selection {
-    background-color: var(--color-dark-border);
-    color: var(--color-dark-text);
+  html.light *, html.light ::before, html.light ::after {
+    border-color: var(--color-warm-200);
+  }
+
+  ::selection {
+    background-color: var(--color-accent-navy);
+    color: #ffffff;
   }
 
   h1, h2, h3, h4, .font-serif-editorial {
@@ -83,20 +78,30 @@
   }
 }
 
-/* ─── Custom Editorial Utilities (Inspired by Referensi 1 - 5) ── */
+/* ─── Custom Editorial Utilities (Presisi Referensi 1) ────────── */
 @utility border-thin {
   border-width: 1px;
-  border-color: var(--color-warm-200);
+  border-color: var(--color-dark-border);
 
-  &:where(.dark, .dark *) {
-    border-color: var(--color-dark-border);
+  &:where(.light, .light *) {
+    border-color: var(--color-warm-200);
   }
+}
+
+/* Display Name Raksasa Hero (Terinspirasi Referensi 1 - Nathan Stampfli) */
+@utility text-display-giant {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(3.25rem, 8.5vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
 @utility text-display-xl {
   font-family: var(--font-serif);
-  font-size: clamp(2.25rem, 5vw, 4rem);
-  line-height: 1.1;
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  line-height: 1.08;
   letter-spacing: -0.025em;
 }
 
@@ -111,23 +116,36 @@
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   letter-spacing: 0.05em;
-  color: var(--color-warm-600);
+  color: var(--color-dark-muted);
 
-  &:where(.dark, .dark *) {
-    color: var(--color-dark-muted);
+  &:where(.light, .light *) {
+    color: var(--color-warm-600);
   }
 }
 
-/* Outline Text Effect (Inspirasi Gambar Referensi 1 - Nathan Stampfli) */
+/* Teks Stroke Outline Display (Terinspirasi Referensi 1) */
 @utility text-editorial-outline {
-  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-stroke: 1.5px currentColor;
   color: transparent;
 }
 
-/* Vertical Text Utility (Inspirasi Gambar Referensi 1 - Vertical Metadata) */
+/* Teks Vertikal Margin (Terinspirasi Referensi 1 - Side Metadata) */
 @utility writing-vertical {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+}
+
+/* Section Header Underscore (Terinspirasi Referensi 1 - works_, aboutme_) */
+@utility accent-underscore {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '_';
+    color: var(--color-accent-navy);
+    font-weight: 700;
+    margin-left: 0.05em;
+  }
 }
 
 /* Understated Link Underline Slide Animation */
@@ -144,8 +162,8 @@
     bottom: -2px;
     left: 0;
     width: 0%;
-    height: 1px;
-    background-color: currentColor;
+    height: 1.5px;
+    background-color: var(--color-accent-navy);
     transition: width 0.25s ease;
   }
 
@@ -153,3 +171,34 @@
     width: 100%;
   }
 }
+
+/* Referensi 0 Active Nav Dot Indicator */
+@utility nav-dot-active {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-accent-navy);
+  }
+}
+
+/* Referensi 0 Section Number Tag Monospace */
+@utility section-number-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-dark-muted);
+
+  &:where(.light, .light *) {
+    color: var(--color-warm-600);
+  }
+}
+

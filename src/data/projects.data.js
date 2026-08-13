@@ -1,0 +1,80 @@
+// Temporary universal project image placeholder as specified by user
+const defaultProjectImage = '/wms.png'
+
+export const projectsData = [
+  {
+    id: 'nusago',
+    number: '01',
+    title: 'GastroPal / NusaGo Travel',
+    category: 'UI/UX DESIGN • PROTOTYPE • FULLSTACK',
+    year: '2026',
+    narrative: 'Integrated travel booking platform connecting Flutter mobile application with Laravel RESTful API backend following Clean Architecture standards.',
+    role: 'Full Stack Developer Intern',
+    focus: 'Mobile UI Architecture, BLoC State Management, RESTful API RBAC',
+    tools: ['Flutter', 'Laravel', 'BLoC', 'MySQL', 'Google Play Console'],
+    image: defaultProjectImage,
+    demoUrl: 'https://play.google.com/store/apps/details?id=com.nusago.mobile',
+    githubUrl: null,
+    featured: true
+  },
+  {
+    id: 'tanaka',
+    number: '02',
+    title: 'Tanaka Management System',
+    category: 'FULLSTACK • LARAVEL / REACT • EXPRESS',
+    year: '2024',
+    narrative: 'Multi-role web management system for garment manufacturing company covering sales, finance, warehouse, and executive real-time dashboards.',
+    role: 'System Analyst & Fullstack Developer',
+    focus: 'Multi-Role RBAC, CI/CD Automated Deployment, Division Workflows',
+    tools: ['React.js', 'Express.js', 'MySQL', 'Tailwind CSS', 'GitHub Actions'],
+    image: defaultProjectImage,
+    demoUrl: null,
+    githubUrl: null,
+    featured: true
+  },
+  {
+    id: 'wms-stechoq',
+    number: '03',
+    title: 'Stechoq Warehouse Management',
+    category: 'BACKEND • NODE.JS • POSTGRESQL',
+    year: '2024',
+    narrative: 'Logistics and warehouse management service with FIFO outbound logic, barcode/QR scanning integration, and Swagger documentation.',
+    role: 'Backend & System Architect',
+    focus: 'FIFO Inventory Tracking, PostgreSQL Optimization, Barcode Scanner API',
+    tools: ['Node.js', 'Express.js', 'PostgreSQL', 'Sequelize ORM', 'Swagger'],
+    image: defaultProjectImage,
+    demoUrl: null,
+    githubUrl: 'https://gitlab.com/maulidi.adiprasetia/sa-wms-be',
+    featured: true
+  },
+  {
+    id: 'blogcraft',
+    number: '04',
+    title: 'BlogCraft Decoupled CMS',
+    category: 'FULLSTACK • VUE 3 • LARAVEL 13',
+    year: '2026',
+    narrative: 'Decoupled CMS architecture separating Laravel 13 REST API and Vue 3 SPA with Tiptap rich text editor, DTO pattern, and DOMPurify XSS prevention.',
+    role: 'Sole Developer',
+    focus: 'Decoupled Architecture, Service Layer, Rich Text Sanitization',
+    tools: ['Vue 3', 'Laravel 13', 'Tiptap', 'Tailwind CSS v4'],
+    image: defaultProjectImage,
+    demoUrl: null,
+    githubUrl: 'https://github.com/ilhamust/blogcraft-cms',
+    featured: false
+  },
+  {
+    id: 'pesantren',
+    number: '05',
+    title: 'Pesantren Roudlotush Sholihin',
+    category: 'FULLSTACK • REACT • SUPABASE',
+    year: '2024',
+    narrative: 'Profile website and RESTful news management API for Islamic boarding school integrated with Supabase storage and React frontend.',
+    role: 'Lead Fullstack Developer',
+    focus: 'Supabase Integration, News CRUD, File Upload Handling',
+    tools: ['React.js', 'Express.js', 'Supabase', 'PostgreSQL'],
+    image: defaultProjectImage,
+    demoUrl: 'https://roudlotushsholihin.ponpes.id/',
+    githubUrl: null,
+    featured: false
+  }
+]

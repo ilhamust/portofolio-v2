@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # Reference & Planning Markdown Files (Bahan Referensi)
-BRIEF_STYLE_PORTOFOLIO.md
+PERSONALITY.md
 CODEBASE.md
 CV_ILHAM.md
 PLAN_PORTOFOLIO.md
