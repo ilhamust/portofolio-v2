@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-20 md:py-32 border-t border-thin scroll-mt-20">
+  <section id="contact" class="py-14 lg:py-20 border-t border-thin scroll-mt-20">
     <BaseContainer size="wide" :padding="true">
       <div class="space-y-12 md:space-y-16">
         

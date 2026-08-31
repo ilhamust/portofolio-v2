@@ -1,32 +1,35 @@
 <template>
   <div
     :class="[
-      'relative flex items-center justify-between gap-1.5 md:gap-2.5 w-full select-none group',
+      'relative flex items-center gap-1.5 md:gap-2.5 w-full select-none group',
       heightClass
     ]"
     :aria-label="alt"
   >
-    <!-- 5 Vertical Sliced Image Slats (Terinspirasi Referensi 1 - Nathan Stampfli) -->
+    <!-- 4 Vertical Sliced Image Slats (Presisi Referensi) -->
     <div
       v-for="(slat, index) in slatsCount"
       :key="index"
       :class="[
-        'flex-1 h-full overflow-hidden rounded-full bg-dark-surface border-thin transition-all duration-500 ease-out group-hover:border-accent-navy/50',
-        offsetClasses[index % offsetClasses.length]
+        'relative flex-1 h-full overflow-hidden rounded-xs bg-dark-surface border-thin transition-all duration-500 ease-out group-hover:border-accent-navy/50',
+        slatOffsets[index % slatOffsets.length]
       ]"
     >
-      <div
-        class="w-full h-full bg-cover bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-110"
-        :style="getSlatStyle(index)"
-      ></div>
+      <img
+        :src="src"
+        :alt="alt"
+        class="absolute top-0 max-w-none h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
+        :style="{
+          width: `${slatsCount * 100}%`,
+          left: `-${index * 100}%`
+        }"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-
-const props = defineProps({
+defineProps({
   /**
    * URL gambar atau path relatif aset gambar
    */
@@ -39,47 +42,29 @@ const props = defineProps({
    */
   alt: {
     type: String,
-    default: 'Project Showcase'
+    default: 'Profile Photo'
   },
   /**
-   * Jumlah bilah pemotong (default: 5 bilah presisi Referensi 1)
+   * Jumlah bilah pemotong (default: 4 bilah presisi Referensi)
    */
   slatsCount: {
     type: Number,
-    default: 5
+    default: 4
   },
   /**
    * Tinggi total kontainer
    */
   heightClass: {
     type: String,
-    default: 'h-[260px] sm:h-[320px] md:h-[400px]'
+    default: 'h-[240px] sm:h-[270px] lg:h-[280px]'
   }
 })
 
-// Offset tinggi staggered acak (Terinspirasi offset bilah di Referensi 1)
-const offsetClasses = [
-  'translate-y-2 md:translate-y-4',
-  '-translate-y-2 md:-translate-y-3',
-  'translate-y-0',
-  '-translate-y-3 md:-translate-y-4',
-  'translate-y-2 md:translate-y-3'
+// Offset staggered tinggi & tinggi bilah presisi referensi (4 Bilah)
+const slatOffsets = [
+  'h-[82%] mt-auto',
+  'h-[98%] mb-auto',
+  'h-[90%] mt-3',
+  'h-[78%] mt-auto'
 ]
-
-/**
- * Menghitung background-position dan background-size untuk setiap bilah pemotong
- * sehingga ketika 5 bilah digabung, gambar utuh terbentuk kembali secara potongan vertikal
- */
-const getSlatStyle = (index) => {
-  const total = props.slatsCount
-  // Hitung persentase posisi horizontal gambar (0% hingga 100%)
-  const percentage = total > 1 ? (index / (total - 1)) * 100 : 50
-
-  return {
-    backgroundImage: `url("${props.src}")`,
-    backgroundPosition: `${percentage}% center`,
-    // Perbesar background-size agar menutupi potongan tiap bilah secara proporsional
-    backgroundSize: `${total * 100}% 100%`
-  }
-}
 </script>
