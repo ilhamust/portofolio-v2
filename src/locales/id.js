@@ -49,14 +49,24 @@ export const id = {
     }
   },
   projects: {
-    sectionNum: '03 / PROYEK PILIHAN',
+    tag: 'STUDI KASUS',
+    sectionNum: '03 / STUDI KASUS',
+    headline: 'Kisah sukses & proyek pilihan',
+    seeRecentWork: 'Lihat karya terbaru',
     viewAll: 'LIHAT SEMUA PROYEK',
-    viewDetail: 'LIHAT DETAIL'
+    viewDetail: 'LIHAT DETAIL',
+    viewProject: 'Lihat Proyek',
+    internalSystem: '// Sistem Internal',
+    prev: 'Sebelumnya',
+    next: 'Selanjutnya'
   },
   techStack: {
     sectionNum: '04 / TECH STACK',
+    tag: 'TEKNOLOGI UTAMA',
     headline: 'Teknologi yang saya gunakan',
-    description: 'Berbagai tools dan teknologi yang saya gunakan untuk membangun aplikasi digital yang handal dan skalabel.'
+    description: 'Berbagai tools dan teknologi yang saya gunakan untuk membangun aplikasi digital yang handal dan skalabel.',
+    marqueeTitle1: 'MEMBANGUN SOLUSI DENGAN',
+    marqueeTitle2: 'TEKNOLOGI DIGITAL MODERN'
   },
   experience: {
     sectionNum: '05 / PENGALAMAN',

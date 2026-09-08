@@ -49,14 +49,24 @@ export const en = {
     }
   },
   projects: {
-    sectionNum: '03 / SELECTED PROJECTS',
+    tag: 'CASE STUDIES',
+    sectionNum: '03 / CASE STUDIES',
+    headline: 'My success stories',
+    seeRecentWork: 'See recent work',
     viewAll: 'VIEW ALL PROJECTS',
-    viewDetail: 'VIEW DETAILS'
+    viewDetail: 'VIEW DETAILS',
+    viewProject: 'View Project',
+    internalSystem: '// Internal System',
+    prev: 'Prev',
+    next: 'Next'
   },
   techStack: {
     sectionNum: '04 / TECH STACK',
+    tag: 'CORE TECHNOLOGIES',
     headline: 'Technologies I work with',
-    description: 'Various tools and technologies I utilize to craft reliable and scalable digital applications.'
+    description: 'Various tools and technologies I utilize to craft reliable and scalable digital applications.',
+    marqueeTitle1: 'ENGINEERING SOLUTIONS FOR',
+    marqueeTitle2: 'MODERN DIGITAL EXPERIENCES'
   },
   experience: {
     sectionNum: '05 / EXPERIENCE',
