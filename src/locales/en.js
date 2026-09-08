@@ -25,7 +25,10 @@ export const en = {
     sectionNum: '02 / ABOUT',
     headline: 'Think deeply, process structurally, learn constantly.',
     description: 'Ilham is an Informatics student at UNU Yogyakarta and a developer crafting himself through technology. His interest goes beyond writing code — combining technical curiosity, visual sensibility, and a strong drive for how digital products are built and communicated.',
+    extendedBio1: 'Behind the code, I am a calm, introspective thinker with high internal standards for my craft. I value structure, clarity, and intentionality—navigating between intuitive foresight and systematic analysis to ensure every digital product is not just functional on the surface, but deeply grounded in solid architecture.',
+    extendedBio2: 'My evolution spans from hands-on network hardware and IT support into modern full-stack development across Laravel, Vue 3, React, and Flutter. Beyond individual engineering, I have mentored 30+ students as a Web Programming Laboratory Assistant and founded the Study Jam community to foster collaborative technical learning.',
     moreAboutMe: 'MORE ABOUT ME',
+    readLess: 'READ LESS',
     values: {
       process: {
         title: 'Focus on Process',

@@ -25,7 +25,10 @@ export const id = {
     sectionNum: '02 / TENTANG',
     headline: 'Berpikir mendalam, berproses terstruktur, selalu belajar.',
     description: 'Saya adalah mahasiswa Informatika yang memiliki ketertarikan besar pada pengembangan aplikasi dan pengalaman digital. Saya menikmati proses membangun sesuatu yang bermanfaat dan berdampak bagi orang lain.',
+    extendedBio1: 'Di balik kode, saya adalah pribadi yang tenang, introspektif, dan memiliki standar internal yang tinggi terhadap apa yang saya kerjakan. Saya menyukai kejelasan, struktur, dan perencanaan—menyeimbangkan intuisi dengan analisis logis untuk memastikan setiap sistem yang dibangun memiliki fondasi yang kuat, rapi, dan bermakna.',
+    extendedBio2: 'Perjalanan saya berkembang dari pemahaman perangkat keras dan jaringan komputer, sebelum mendalami rekayasa web dan mobile modern seperti Laravel, Vue, React, dan Flutter. Saya juga mendedikasikan waktu sebagai Asisten Laboratorium Pemrograman Web membimbing 30+ mahasiswa serta memimpin komunitas belajar Study Jam di kampus.',
     moreAboutMe: 'LEBIH BANYAK TENTANG SAYA',
+    readLess: 'TAMPILKAN LEBIH SEDIKIT',
     values: {
       process: {
         title: 'Fokus pada Proses',

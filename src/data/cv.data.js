@@ -10,7 +10,7 @@ export const cvData = {
   linkedinHandle: 'linkedin.com/in/ilham-must',
   university: 'Universitas Nahdlatul Ulama Yogyakarta',
   gpa: '3.96 / 4.00',
-  cvUrl: '/CV_ILHAM.pdf',
+  cvUrl: 'https://docs.google.com/document/d/1tjy3Ydy7fKKhu78c1uBtA8-4eu4xM8gA',
 
   techStack: [
     { name: 'Laravel', category: 'Backend', icon: 'laravel' },
