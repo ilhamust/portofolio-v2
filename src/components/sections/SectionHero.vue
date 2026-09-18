@@ -14,14 +14,14 @@
           </div>
 
           <!-- Giant Display Name -->
-          <div class="space-y-0.5">
-            <h1 class="text-display-giant text-dark-text light:text-warm-900 tracking-tight leading-none">
+          <h1 class="space-y-0.5">
+            <span class="block text-display-giant text-dark-text light:text-warm-900 tracking-tight leading-none">
               ILHAM
-            </h1>
-            <h1 class="text-display-giant text-editorial-outline tracking-tight leading-none flex items-baseline gap-1">
+            </span>
+            <span class="text-display-giant text-editorial-outline tracking-tight leading-none flex items-baseline gap-1">
               MUSTAQIM<span class="text-accent-navy inline-block w-3 h-3 md:w-4 md:h-4 rounded-full bg-accent-navy"></span>
-            </h1>
-          </div>
+            </span>
+          </h1>
 
           <!-- Tagline Subtitle -->
           <h2 class="text-xs md:text-sm font-mono uppercase tracking-widest text-dark-text light:text-warm-900 font-semibold pt-0.5">
