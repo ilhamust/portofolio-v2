@@ -120,15 +120,14 @@ const emit = defineEmits(['navigate'])
 const { lang, t, setLanguage } = useI18n()
 const isMobileMenuOpen = ref(false)
 
-// 7 Sections
+// 6 Sections
 const navItems = [
   { id: 'home', key: 'home' },
   { id: 'about', key: 'about' },
   { id: 'projects', key: 'projects' },
   { id: 'techstack', key: 'techStack' },
   { id: 'experience', key: 'experience' },
-  { id: 'now', key: 'now' },
-  { id: 'contact', key: 'contact' }
+  { id: 'now', key: 'now' }
 ]
 
 const scrollToSection = (sectionId) => {

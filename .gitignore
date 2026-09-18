@@ -32,3 +32,6 @@ PLAN_PORTOFOLIO.md
 # Reference Assets & Mockup Screenshots
 public/referensi*.png
 public/refernsei*.png
+
+# Environment Variables
+.env

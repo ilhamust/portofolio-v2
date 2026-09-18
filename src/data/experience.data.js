@@ -2,13 +2,42 @@ export const experienceData = [
   {
     id: 'exp-1',
     year: '2026',
-    shortPeriod: '2026 – Present',
+    shortPeriod: 'Sep 2026 – Present',
+    period: 'September 2026 – Present',
+    role: 'Full Stack Developer Intern - IFI',
+    company: 'CODING COLLECTIVE',
+    employmentType: 'Internship',
+    location: 'Yogyakarta, Indonesia',
+    type: 'work',
+    logo: '/logo-coding-collective.webp',
+    brandBadge: {
+      bg: 'bg-indigo-500/10 light:bg-indigo-50',
+      text: 'text-indigo-400 light:text-indigo-700',
+      border: 'border-indigo-500/30 light:border-indigo-200',
+      glow: 'group-hover:shadow-[0_0_15px_rgba(99,102,241,0.25)]',
+      icon: 'code'
+    },
+    description: 'Participated in the Insightful Futures Internship Program (IFI) Batch 6, an internship program initiated by Coding Collective, as a Full Stack Developer Intern, gaining hands-on experience in full-stack web development through industry-oriented projects and mentor guidance.',
+    highlights: [
+      'Developed scalable web applications across frontend and backend, covering system architecture, UI implementation, business logic, and RESTful API development.',
+      'Designed and maintained secure RESTful APIs and relational database schemas, including optimized queries and data management.',
+      'Integrated third-party services, payment gateways, and external APIs into application workflows.',
+      'Assisted with server environment management, deployment processes, and CI/CD pipelines to support reliable application releases.',
+      'Diagnosed and resolved technical issues across the frontend, backend, database, and system integration layers.'
+    ],
+    tags: ['Full Stack', 'REST API', 'Databases', 'Payment Gateway', 'CI/CD']
+  },
+  {
+    id: 'exp-2',
+    year: '2026',
+    shortPeriod: 'Apr – Aug 2026',
     period: 'April 2026 – August 2026',
     role: 'Full Stack Developer Intern',
     company: 'PT NUSAGO DIGITAL TRAVELINDO',
     employmentType: 'Internship',
     location: 'Yogyakarta, Indonesia',
     type: 'work',
+    logo: '/logo-nusago.png',
     brandBadge: {
       bg: 'bg-cyan-500/10 light:bg-cyan-50',
       text: 'text-cyan-400 light:text-cyan-700',
@@ -25,15 +54,16 @@ export const experienceData = [
     tags: ['Laravel', 'Flutter', 'BLoC', 'REST API', 'Play Console']
   },
   {
-    id: 'exp-2',
+    id: 'exp-3',
     year: '2025',
     shortPeriod: '2025 – 2026',
     period: 'September 2025 – February 2026',
     role: 'Laboratory Assistant for Web Programming',
-    company: 'UNIVERSITAS NAHDLATUL ULAMA YOGYAKARTA',
-    employmentType: 'Part Time',
+    company: 'UNU YOGYAKARTA',
+    employmentType: 'Teaching Assistant',
     location: 'Yogyakarta, Indonesia',
     type: 'work',
+    logo: '/logo-unu.png',
     brandBadge: {
       bg: 'bg-fuchsia-500/10 light:bg-fuchsia-50',
       text: 'text-fuchsia-400 light:text-fuchsia-700',
@@ -50,15 +80,16 @@ export const experienceData = [
     tags: ['Teaching', 'React.js', 'Express.js', 'Next.js', 'Mentorship']
   },
   {
-    id: 'exp-3',
+    id: 'exp-4',
     year: '2025',
     shortPeriod: '2025',
     period: 'March 2025 – July 2025',
     role: 'Social Media Specialist & Web Admin',
     company: 'SHAFIEC',
-    employmentType: 'Part Time',
+    employmentType: 'Internship',
     location: 'Yogyakarta, Indonesia',
     type: 'work',
+    logo: '/Logo_Shafiec_v2.png',
     brandBadge: {
       bg: 'bg-emerald-500/10 light:bg-emerald-50',
       text: 'text-emerald-400 light:text-emerald-700',
@@ -75,15 +106,16 @@ export const experienceData = [
     tags: ['SEO', 'WordPress', 'Google Search Console', 'Analytics']
   },
   {
-    id: 'exp-4',
+    id: 'exp-5',
     year: '2022',
     shortPeriod: '2022 – 2023',
     period: 'May 2022 – May 2023',
     role: 'IT Support & Network Specialist',
     company: 'CV. KARYA HIDUP SENTOSA',
-    employmentType: 'Contract',
+    employmentType: 'Internship',
     location: 'Yogyakarta, Indonesia',
     type: 'work',
+    logo: '/logo_quick.jpg',
     brandBadge: {
       bg: 'bg-amber-500/10 light:bg-amber-50',
       text: 'text-amber-400 light:text-amber-700',

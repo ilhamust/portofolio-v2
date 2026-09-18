@@ -5,8 +5,7 @@ export const en = {
     projects: 'projects',
     techStack: 'tech stack',
     experience: 'experience',
-    now: 'now',
-    contact: 'contact'
+    now: 'guestbook'
   },
   hero: {
     sectionNum: '01 / HOME',
@@ -49,22 +48,24 @@ export const en = {
   projects: {
     tag: 'CASE STUDIES',
     sectionNum: '03 / CASE STUDIES',
-    headline: 'My success stories',
+    headline: 'Featured Projects & Case Studies',
     seeRecentWork: 'See recent work',
     viewAll: 'VIEW ALL PROJECTS',
     viewDetail: 'VIEW DETAILS',
     viewProject: 'View Project',
+    repository: 'Repository',
+    liveDemo: 'Live Demo',
     internalSystem: '// Internal System',
     prev: 'Prev',
     next: 'Next'
   },
   techStack: {
     sectionNum: '04 / TECH STACK',
-    tag: 'CORE TECHNOLOGIES',
-    headline: 'Technologies I work with',
-    description: 'Various tools and technologies I utilize to craft reliable and scalable digital applications.',
-    marqueeTitle1: 'ENGINEERING SOLUTIONS FOR',
-    marqueeTitle2: 'MODERN DIGITAL EXPERIENCES'
+    tag: 'EXPLORATION & PRACTICE',
+    headline: 'Technologies I Work With',
+    description: 'A collection of tools and technologies I actively explore and use across my projects. Still learning, growing, and refining my technical skills with every challenge.',
+    marqueeTitle1: 'LEARNING & GROWING WITH',
+    marqueeTitle2: 'MODERN TECH STACK'
   },
   experience: {
     sectionNum: '05 / EXPERIENCE',
@@ -75,22 +76,32 @@ export const en = {
     technologies: 'Technologies & Tools'
   },
   now: {
-    sectionNum: '06 / NOW',
-    headline: 'Currently building. Always exploring.',
-    focusLabel: 'CURRENT FOCUS',
-    focusDescription: 'Building personal projects, deepening Vue.js expertise, and exploring how technology can deliver more meaningful digital experiences.',
-    availableLabel: 'AVAILABLE FOR',
-    availableValue: 'Internship & Fulltime Opportunities'
+    sectionNum: '06 / GUESTBOOK',
+    tag: 'NOTES & WISHES',
+    headline: 'Leave a Note & Say Hello',
+    description: 'Share your thoughts, feedback, or simply leave a warm greeting. Your note will appear dynamically on the guestbook wall below.',
+    form: {
+      nameLabel: 'Full Name',
+      namePlaceholder: 'Your name',
+      emailLabel: 'Email (Optional)',
+      emailPlaceholder: 'email@example.com',
+      emailHelp: 'Email is optional, kept strictly private and will never be published.',
+      messageLabel: 'Message / Note',
+      messagePlaceholder: 'Write a note or leave a message...',
+      submitButton: 'Leave Note',
+      sending: 'Posting...',
+      successMessage: 'Thank you! Your note has been added to the guestbook.',
+      errorMessage: 'Please provide your name and message.',
+      invalidEmailMessage: 'Please provide a valid email format (or leave blank).'
+    },
+    countLabel: 'Notes Recorded'
   },
-  contact: {
-    sectionNum: '07 / CONTACT',
-    headline: 'Let\'s build something meaningful together.',
-    email: 'EMAIL',
-    linkedin: 'LINKEDIN',
-    github: 'GITHUB',
-    phone: 'PHONE',
-    responseLabel: 'RESPONSE TIME',
-    responseValue: 'WITHIN 24 HOURS',
+  footer: {
+    socialTag: '// CONNECT',
+    closingHeadline: 'Let\'s build something meaningful together.',
+    closingDescription: 'Open for engineering collaborations, new career opportunities, or technical architecture discussions.',
+    availableStatus: 'Available for Opportunities',
+    location: 'Klaten, Central Java, Indonesia',
     copyright: '© 2026 ILHAM MUSTAQIM. ALL RIGHTS RESERVED.',
     backToTop: 'BACK TO TOP'
   }

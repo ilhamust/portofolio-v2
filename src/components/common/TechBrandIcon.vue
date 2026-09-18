@@ -1,97 +1,70 @@
 <template>
-  <svg
-    class="w-6 h-6 sm:w-7 sm:h-7 transition-colors duration-300"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <!-- Laravel -->
-    <path
-      v-if="name === 'laravel'"
-      d="M23.75 6.78l-7.96-4.6a1.5 1.5 0 0 0-1.5 0l-4.5 2.6-4.5-2.6a1.5 1.5 0 0 0-1.5 0L.29 4.2a1.5 1.5 0 0 0-.75 1.3v9a1.5 1.5 0 0 0 .75 1.3l7.5 4.33a1.5 1.5 0 0 0 1.5 0l4.5-2.6 4.5 2.6a1.5 1.5 0 0 0 1.5 0l7.5-4.33a1.5 1.5 0 0 0 .75-1.3v-9a1.5 1.5 0 0 0-.79-1.32zm-8.71 13.62l-6.5-3.75v-7.5l6.5 3.75zm1-8.62l-6.5-3.75 3.5-2.02 6.5 3.75zm6.5 4.87l-6.5 3.75v-7.5l6.5-3.75z"
+  <div class="w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center shrink-0">
+    <img
+      v-if="iconData.url"
+      :src="iconData.url"
+      :alt="name"
+      loading="lazy"
+      class="w-full h-full object-contain"
+      :class="{ 'dark:invert': iconData.invertInDark }"
     />
-
-    <!-- Vue.js -->
-    <g v-else-if="name === 'vue'">
-      <path d="M19.197 1.636h3.62L12 20.364.818 1.636h7.24L12 8.545l3.96-6.909z" />
-      <path d="M15.96 1.636h3.237L12 13.455 4.803 1.636h3.237L12 8.545l3.96-6.909z" opacity="0.6" />
-    </g>
-
-    <!-- React.js -->
-    <g v-else-if="name === 'react'">
-      <circle cx="12" cy="12" r="2" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.5" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" fill="none" stroke="currentColor" stroke-width="1.5" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" fill="none" stroke="currentColor" stroke-width="1.5" />
-    </g>
-
-    <!-- Node.js -->
-    <path
-      v-else-if="name === 'nodejs'"
-      d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2zm0 2.31L4.5 8.64v7.72L12 20.69l7.5-4.33V8.64L12 4.31zm-1.5 5.19h3v2.25h-3zm0 3.75h3v4.5h-3z"
-    />
-
-    <!-- Express.js -->
-    <path
-      v-else-if="name === 'express'"
-      d="M3 7h3l3 4.5L6 16H3l3-4.5L3 7zm7.5 0h2.5v9h-2.5V7zm4.5 4.5a4.5 4.5 0 0 1 4.5-4.5h1.5v2.2h-1.5a2.3 2.3 0 0 0-2.3 2.3v.1a2.3 2.3 0 0 0 2.3 2.3h1.5v2.1h-1.5a4.5 4.5 0 0 1-4.5-4.5z"
-    />
-
-    <!-- PHP -->
-    <path
-      v-else-if="name === 'php'"
-      d="M12 3C6.5 3 2 7 2 12s4.5 9 10 9 10-4 10-9-4.5-9-10-9zm-5.5 12h-1.8L6.5 7h3.2c1.7 0 2.7.8 2.3 2.5-.4 1.8-1.7 2.5-3.3 2.5H7.3l-.8 3zm5.7-4.2h1.6l-.8 4.2h-1.7l1.5-7h1.7l-.3 1.4c.6-1.1 1.6-1.5 2.6-1.5 1.6 0 2.3.9 1.9 2.7l-.9 4.4h-1.7l.8-4.2c.2-1.1-.3-1.6-1.2-1.6-.9 0-1.7.6-2 1.8l-.8 3.8h-1.7l1.5-7zm-4.4-1.8h1.2c.8 0 1.4-.4 1.6-1.2.2-.8-.2-1.2-1-1.2H8.3l-.5 2.4z"
-    />
-
-    <!-- MySQL -->
-    <path
-      v-else-if="name === 'mysql'"
-      d="M18.8 6.4c-.2-.4-.6-.6-1.1-.6-.8 0-1.4.5-1.7 1.2-.5 1-1.4 1.7-2.5 1.9-.3-.5-.7-.9-1.2-1.2-.9-.5-2-.6-3-.2-1.3.5-2.2 1.6-2.5 3-.2 1.1.1 2.2.8 3.1.7.9 1.8 1.4 3 1.4h.5c.8-.1 1.6-.4 2.2-.9.5.5 1.1.9 1.8 1.1.8.2 1.6.2 2.4-.1.9-.4 1.6-1 2-1.9.4-.9.4-2 .1-2.9-.3-.9-.9-1.7-1.7-2.1-.2-.6-.6-1.3-1.1-1.7zm-6.1 7.2c-.8 0-1.5-.3-2-.9-.5-.6-.7-1.3-.5-2 .2-.9.8-1.6 1.6-1.9.7-.3 1.4-.2 2 .1.4.2.7.5.9.9-.4.9-1.1 1.7-2 2.1v1.7zm4.7-.6c-.3.6-.8 1-1.4 1.3-.6.2-1.2.2-1.8 0-.4-.1-.8-.4-1.1-.8.6-.6 1-1.4 1.2-2.2.8.2 1.4.6 1.8 1.1.3.6.4 1.3.1 1.9l.2-1.3z"
-    />
-
-    <!-- PostgreSQL -->
-    <path
-      v-else-if="name === 'postgresql'"
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16.5c-1.38 0-2.5-.9-2.5-2s1.12-2 2.5-2 2.5.9 2.5 2-1.12 2-2.5 2zm3.5-6.5h-7c-.55 0-1-.45-1-1s.45-1 1-1h7c.55 0 1 .45 1 1s-.45 1-1 1zm0-3h-7c-.55 0-1-.45-1-1s.45-1 1-1h7c.55 0 1 .45 1 1s-.45 1-1 1z"
-    />
-
-    <!-- Git -->
-    <path
-      v-else-if="name === 'git'"
-      d="M21.7 10.3l-8-8a2.4 2.4 0 0 0-3.4 0l-8 8a2.4 2.4 0 0 0 0 3.4l8 8a2.4 2.4 0 0 0 3.4 0l8-8a2.4 2.4 0 0 0 0-3.4zm-10.7 8.3a1.5 1.5 0 0 1-1.1-2.5l2.2-2.2v-3.8a1.5 1.5 0 1 1 1.5 0v3.8l2.2 2.2a1.5 1.5 0 0 1-1.1 2.5 1.5 1.5 0 0 1-1.1-.5l-1.5-1.5-1.5 1.5c-.3.3-.7.5-1.1.5z"
-    />
-
-    <!-- Docker -->
-    <path
-      v-else-if="name === 'docker'"
-      d="M13 8h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm6-3h2v2h-2zm-3 0h2v2h-2zm6 6h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm14.8 2.2c-.3-.2-1.4-.4-2.5.3-.4.3-.8.7-1.1 1.1-.3-.1-.7-.1-1.1-.1H2.4c-.2.8-.2 1.6 0 2.4 1 3.5 4.3 6.1 8.2 6.1 5.2 0 9.7-3.9 10.3-9.1.5-.1.9-.3 1.3-.6.4-.3.7-.7.6-1.1-.3-.3-.9-.6-1-.7z"
-    />
-
-    <!-- Figma -->
-    <path
-      v-else-if="name === 'figma'"
-      d="M8 2h4v4H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2zm4 4h4a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-4V6zm0 4h4a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-4v-4zm-4 0h4v4H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2zm0 4h4v4a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-4z"
-    />
-
-    <!-- Flutter -->
-    <path
-      v-else-if="name === 'flutter'"
-      d="M14.3 2L5 11.3l2.8 2.8L19.9 2h-5.6zm0 8.7L8.9 16.1l5.4 5.4h5.6l-5.4-5.4 5.4-5.4h-5.6z"
-    />
-
-    <!-- Default Fallback -->
-    <path
+    <svg
       v-else
-      d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"
-    />
-  </svg>
+      class="w-full h-full text-accent-navy"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z" />
+    </svg>
+  </div>
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   name: {
     type: String,
     required: true
   }
+})
+
+// Pemetaan nama icon ke CDN jsDelivr (Devicon resmi berwarna)
+const iconData = computed(() => {
+  const key = props.name.toLowerCase().trim()
+
+  const cdnMap = {
+    laravel: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
+    vue: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+    vuejs: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+    react: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    reactjs: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    nodejs: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    node: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    express: {
+      url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+      invertInDark: true
+    },
+    php: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+    mysql: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+    postgresql: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+    postgres: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+    git: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    docker: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+    figma: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+    flutter: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+    dart: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg' },
+    nextjs: {
+      url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+      invertInDark: true
+    },
+    tailwind: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+    tailwindcss: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+    supabase: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
+    javascript: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    js: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' }
+  }
+
+  return cdnMap[key] || { url: null }
 })
 </script>

@@ -1,6 +1,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const SECTION_IDS = ['home', 'about', 'projects', 'techstack', 'experience', 'now', 'contact']
+const SECTION_IDS = ['home', 'about', 'projects', 'techstack', 'experience', 'now']
 
 export function useActiveSection(sectionIds = SECTION_IDS) {
   const activeSectionId = ref(sectionIds[0] || 'home')
@@ -16,7 +16,7 @@ export function useActiveSection(sectionIds = SECTION_IDS) {
   }
 
   /**
-   * Scroll handler presisi untuk mendeteksi posisi teratas (Home) & terbawah (Contact)
+   * Scroll handler presisi untuk mendeteksi posisi teratas (Home) & terbawah (Guestbook)
    */
   const handleScroll = () => {
     if (typeof window === 'undefined') return
@@ -33,7 +33,7 @@ export function useActiveSection(sectionIds = SECTION_IDS) {
     const windowHeight = window.innerHeight
     const fullHeight = document.documentElement.scrollHeight
     if (scrollY + windowHeight >= fullHeight - 40) {
-      activeSectionId.value = sectionIds[sectionIds.length - 1] || 'contact'
+      activeSectionId.value = sectionIds[sectionIds.length - 1] || 'now'
     }
   }
 

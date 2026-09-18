@@ -71,7 +71,7 @@
                 class="bg-dark-surface light:bg-warm-100 border rounded-2xl transition-all duration-300 overflow-hidden shadow-xs"
                 :class="[
                   isExpanded(item.id)
-                    ? 'border-accent-navy/40 light:border-accent-navy/30 ring-1 ring-accent-navy/10'
+                    ? 'border-dark-text/30 light:border-warm-400 shadow-sm'
                     : 'border-thin hover:border-dark-hover light:hover:border-warm-300'
                 ]"
               >
@@ -84,17 +84,19 @@
                 >
                   <!-- Left: Company / Role Emblem & Titles -->
                   <div class="flex items-center gap-3 sm:gap-4 min-w-0">
-                    <!-- Brand / Role Badge Icon -->
+                    <!-- Brand / Company Logo Emblem -->
                     <div
-                      class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center border shrink-0 transition-transform duration-300 group-hover:scale-105"
-                      :class="[
-                        item.brandBadge?.bg || 'bg-dark-bg light:bg-warm-50',
-                        item.brandBadge?.text || 'text-dark-text light:text-warm-900',
-                        item.brandBadge?.border || 'border-thin',
-                        item.brandBadge?.glow || ''
-                      ]"
+                      class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105 overflow-hidden"
                     >
+                      <img
+                        v-if="item.logo"
+                        :src="item.logo"
+                        :alt="item.company"
+                        loading="lazy"
+                        class="w-full h-full object-contain rounded-xl"
+                      />
                       <component
+                        v-else
                         :is="getBadgeIcon(item.brandBadge?.icon)"
                         class="w-5 h-5 sm:w-5.5 sm:h-5.5"
                       />

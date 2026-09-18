@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@lucide/vue": "^1.31.0",
+    "@supabase/supabase-js": "^2.116.0",
     "@tailwindcss/vite": "^4.3.3",
     "@vueuse/motion": "^3.0.3",
     "lucide-vue-next": "^1.0.0",

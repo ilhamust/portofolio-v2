@@ -211,3 +211,30 @@
   }
 }
 
+/* ─── Marquee Horizontal Scroll Animations ──────────────────── */
+@keyframes marquee-track-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-track-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-track-left 40s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-track-right 45s linear infinite;
+}
+
+.marquee-pause-hover:hover {
+  animation-play-state: paused;
+}
+

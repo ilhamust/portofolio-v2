@@ -16,11 +16,8 @@
       <!-- 05 — EXPERIENCE -->
       <SectionExperience />
 
-      <!-- 06 — NOW -->
-      <SectionNow />
-
-      <!-- 07 — CONTACT -->
-      <SectionContact />
+      <!-- 06 — GUESTBOOK -->
+      <SectionGuestbook />
     </div>
   </DefaultLayout>
 </template>
@@ -32,6 +29,5 @@ import SectionAbout from '@/components/sections/SectionAbout.vue'
 import SectionProjects from '@/components/sections/SectionProjects.vue'
 import SectionTechStack from '@/components/sections/SectionTechStack.vue'
 import SectionExperience from '@/components/sections/SectionExperience.vue'
-import SectionNow from '@/components/sections/SectionNow.vue'
-import SectionContact from '@/components/sections/SectionContact.vue'
+import SectionGuestbook from '@/components/sections/SectionGuestbook.vue'
 </script>
