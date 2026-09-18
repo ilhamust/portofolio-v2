@@ -33,17 +33,56 @@
             {{ t('hero.bio') }}
           </p>
 
-          <!-- CTAs Link Group -->
-          <div class="pt-2 flex items-center gap-6">
+          <!-- CTAs Link Group: View CV | Social Media Links -->
+          <div class="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-4.5 text-xs font-mono">
             <a
               :href="cvData.cvUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-accent-navy hover:underline font-mono font-semibold uppercase tracking-wider text-xs"
+              class="inline-flex items-center gap-1.5 text-accent-navy hover:underline font-semibold uppercase tracking-wider"
             >
               <span>{{ t('hero.viewCv') }}</span>
               <span>→</span>
             </a>
+
+            <!-- Separator Vertical Bar | -->
+            <span class="text-dark-muted/40 light:text-warm-400 select-none">|</span>
+
+            <!-- Social Links: LinkedIn, Instagram, GitHub -->
+            <div class="flex items-center gap-3 sm:gap-4">
+              <a
+                :href="cvData.linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-dark-muted light:text-warm-600 hover:text-dark-text light:hover:text-warm-900 transition-colors uppercase tracking-wider text-[0.6875rem] sm:text-xs"
+                title="LinkedIn"
+              >
+                <Linkedin class="w-3.5 h-3.5" />
+                <span>LinkedIn</span>
+              </a>
+
+              <a
+                :href="cvData.instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-dark-muted light:text-warm-600 hover:text-dark-text light:hover:text-warm-900 transition-colors uppercase tracking-wider text-[0.6875rem] sm:text-xs"
+                title="Instagram"
+              >
+                <Instagram class="w-3.5 h-3.5" />
+                <span>Instagram</span>
+              </a>
+
+              <a
+                :href="cvData.github"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-dark-muted light:text-warm-600 hover:text-dark-text light:hover:text-warm-900 transition-colors uppercase tracking-wider text-[0.6875rem] sm:text-xs"
+                title="GitHub"
+              >
+                <Github class="w-3.5 h-3.5" />
+                <span>GitHub</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -68,6 +107,7 @@
 <script setup>
 import { BaseContainer } from '@/components/base'
 import HeroPhotoFrame from '@/components/common/HeroPhotoFrame.vue'
+import { Linkedin, Instagram, Github } from 'lucide-vue-next'
 import { cvData } from '@/data/cv.data.js'
 import { useI18n } from '@/composables/useI18n'
 

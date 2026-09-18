@@ -8,6 +8,8 @@ export const cvData = {
   githubHandle: 'github.com/ilhamust',
   linkedin: 'https://linkedin.com/in/ilham-must/',
   linkedinHandle: 'linkedin.com/in/ilham-must',
+  instagram: 'https://instagram.com/ilhamust',
+  instagramHandle: '@ilhamust',
   university: 'Universitas Nahdlatul Ulama Yogyakarta',
   gpa: '3.96 / 4.00',
   cvUrl: 'https://docs.google.com/document/d/1tjy3Ydy7fKKhu78c1uBtA8-4eu4xM8gA',

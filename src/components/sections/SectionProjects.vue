@@ -22,7 +22,7 @@
                 type="button"
                 @click="prevPage"
                 :disabled="currentPage === 0"
-                class="w-8 h-8 rounded-full border border-thin bg-dark-surface/50 light:bg-warm-100 flex items-center justify-center text-dark-text light:text-warm-900 hover:border-accent-navy hover:text-accent-navy disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none"
+                class="w-8 h-8 rounded-full border border-thin bg-dark-surface/50 light:bg-warm-100 flex items-center justify-center text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none"
                 aria-label="Previous projects"
               >
                 ←
@@ -34,7 +34,7 @@
                 type="button"
                 @click="nextPage"
                 :disabled="currentPage === totalPages - 1"
-                class="w-8 h-8 rounded-full border border-thin bg-dark-surface/50 light:bg-warm-100 flex items-center justify-center text-dark-text light:text-warm-900 hover:border-accent-navy hover:text-accent-navy disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none"
+                class="w-8 h-8 rounded-full border border-thin bg-dark-surface/50 light:bg-warm-100 flex items-center justify-center text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none"
                 aria-label="Next projects"
               >
                 →
@@ -46,10 +46,10 @@
               href="https://github.com/ilhamust"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 pl-3.5 pr-2 py-1.5 rounded-full border border-thin text-xs font-mono tracking-wide text-dark-text light:text-warm-900 hover:border-accent-navy hover:text-accent-navy transition-all duration-200 group bg-dark-surface/60 light:bg-warm-100/60 shrink-0"
+              class="inline-flex items-center gap-2 pl-3.5 pr-2 py-1.5 rounded-full border border-thin text-xs font-mono tracking-wide text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 transition-all duration-200 group bg-dark-surface/60 light:bg-warm-100/60 shrink-0"
             >
               <span>{{ t('projects.seeRecentWork') }}</span>
-              <span class="w-5 h-5 rounded-full bg-dark-bg light:bg-warm-200 flex items-center justify-center text-[0.6875rem] text-dark-muted light:text-warm-700 group-hover:text-accent-navy group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+              <span class="w-5 h-5 rounded-full bg-dark-bg light:bg-warm-200 flex items-center justify-center text-[0.6875rem] text-dark-muted light:text-warm-700 group-hover:text-dark-text light:group-hover:text-warm-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
                 ↗
               </span>
             </a>
@@ -61,7 +61,7 @@
           <div
             v-for="project in visibleProjects"
             :key="project.id"
-            class="bg-dark-surface light:bg-warm-100 border border-thin rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-accent-navy/40 transition-all duration-300 shadow-sm"
+            class="bg-dark-surface light:bg-warm-100 border border-thin rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 shadow-sm"
           >
             <!-- 1. Bagian Atas: Gambar Mockup Full-Bleed dengan Floating Badge -->
             <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#0d0d0d]">
@@ -110,7 +110,7 @@
             <div class="p-4 sm:p-5 flex flex-col justify-between grow space-y-3">
               <div class="space-y-2">
                 <!-- Judul Dampak Proyek -->
-                <h3 class="text-xs sm:text-sm lg:text-base font-sans font-bold text-dark-text light:text-warm-900 group-hover:text-accent-navy transition-colors line-clamp-2 leading-snug">
+                <h3 class="text-xs sm:text-sm lg:text-base font-sans font-bold text-dark-text light:text-warm-900 line-clamp-2 leading-snug">
                   {{ project.impactTitle }}
                 </h3>
 

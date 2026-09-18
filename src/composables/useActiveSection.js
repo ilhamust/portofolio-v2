@@ -1,6 +1,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const SECTION_IDS = ['home', 'about', 'projects', 'techstack', 'experience', 'explore', 'now', 'contact']
+const SECTION_IDS = ['home', 'about', 'projects', 'techstack', 'experience', 'now', 'contact']
 
 export function useActiveSection(sectionIds = SECTION_IDS) {
   const activeSectionId = ref(sectionIds[0] || 'home')

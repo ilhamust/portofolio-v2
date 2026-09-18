@@ -10,9 +10,9 @@
           </span>
         </div>
 
-        <!-- Headline Serif Display -->
+        <!-- Headline Display -->
         <div class="max-w-3xl">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-dark-text light:text-warm-900 leading-tight">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-dark-text light:text-warm-900 leading-tight">
             {{ t('contact.headline') }}<span class="text-accent-navy inline-block w-3 h-3 md:w-4 md:h-4 rounded-full bg-accent-navy ml-1"></span>
           </h2>
         </div>
@@ -30,7 +30,7 @@
               </span>
               <a
                 :href="`mailto:${cvData.email}`"
-                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:text-accent-navy transition-colors font-semibold block truncate"
+                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:underline transition-colors font-semibold block truncate"
               >
                 {{ cvData.email }}
               </a>
@@ -45,7 +45,7 @@
                 :href="cvData.linkedin"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:text-accent-navy transition-colors font-semibold block truncate"
+                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:underline transition-colors font-semibold block truncate"
               >
                 {{ cvData.linkedinHandle }}
               </a>
@@ -60,7 +60,7 @@
                 :href="cvData.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:text-accent-navy transition-colors font-semibold block truncate"
+                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:underline transition-colors font-semibold block truncate"
               >
                 {{ cvData.githubHandle }}
               </a>
@@ -73,7 +73,7 @@
               </span>
               <a
                 :href="`tel:${cvData.phone.replace(/\s+/g, '')}`"
-                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:text-accent-navy transition-colors font-semibold block truncate"
+                class="text-sm md:text-base font-mono text-dark-text light:text-warm-900 hover:underline transition-colors font-semibold block truncate"
               >
                 {{ cvData.phone }}
               </a>

@@ -8,10 +8,14 @@
           @click.prevent="scrollToSection('home')"
           class="flex items-center gap-2.5 group focus:outline-none"
         >
-          <!-- Accent Box [■] -->
-          <div class="w-3.5 h-3.5 bg-accent-navy rounded-xs shrink-0 group-hover:scale-110 transition-transform duration-300"></div>
-          <span class="font-sans text-sm md:text-base font-bold tracking-tight text-dark-text light:text-warm-900 uppercase">
-            ILHAM
+          <!-- Brand Logo Image -->
+          <img
+            src="/logo.png"
+            alt="Ilham Logo"
+            class="w-6 h-6 md:w-6.5 md:h-6.5 object-contain shrink-0 group-hover:scale-105 transition-transform duration-300 rounded-xs"
+          />
+          <span class="font-sans text-xs sm:text-sm font-medium tracking-tight text-dark-text/90 light:text-warm-800 group-hover:text-dark-text transition-colors">
+            Ilham Mustaqim
           </span>
         </a>
 
@@ -116,14 +120,13 @@ const emit = defineEmits(['navigate'])
 const { lang, t, setLanguage } = useI18n()
 const isMobileMenuOpen = ref(false)
 
-// 8 Sections presisi Referensi 0
+// 7 Sections
 const navItems = [
   { id: 'home', key: 'home' },
   { id: 'about', key: 'about' },
   { id: 'projects', key: 'projects' },
   { id: 'techstack', key: 'techStack' },
   { id: 'experience', key: 'experience' },
-  { id: 'explore', key: 'explore' },
   { id: 'now', key: 'now' },
   { id: 'contact', key: 'contact' }
 ]

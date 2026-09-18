@@ -18,8 +18,8 @@
           </span>
         </div>
 
-        <!-- Section Main Serif Title -->
-        <h2 class="text-2xl md:text-4xl font-serif tracking-tight text-warm-900 dark:text-dark-text">
+        <!-- Section Main Title -->
+        <h2 class="text-2xl md:text-4xl font-sans font-bold tracking-tight text-warm-900 dark:text-dark-text">
           <slot name="title">{{ title }}</slot>
         </h2>
 

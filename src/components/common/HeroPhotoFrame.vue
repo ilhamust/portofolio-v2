@@ -9,7 +9,7 @@
     <!-- Main Container Frame -->
     <div
       :class="[
-        'relative w-full overflow-hidden rounded-lg bg-dark-surface light:bg-warm-100 border border-thin transition-all duration-500 group-hover:border-accent-navy/60 group-hover:shadow-xl group-hover:shadow-accent-navy/10',
+        'relative w-full overflow-hidden rounded-lg bg-dark-surface light:bg-warm-100 border border-thin transition-all duration-500 group-hover:border-dark-text/30 light:group-hover:border-warm-400 group-hover:shadow-xl group-hover:shadow-black/20',
         aspectClass
       ]"
     >
@@ -22,7 +22,7 @@
       <!-- Top-Left Monospace Editorial Badge Tag -->
       <div
         v-if="badgeText"
-        class="absolute top-3 left-3 z-20 bg-dark-bg/40 light:bg-warm-50/50 backdrop-blur-md px-2.5 py-1 rounded text-[0.625rem] font-mono uppercase tracking-wider text-dark-text/90 light:text-warm-900 border border-white/15 light:border-black/15 group-hover:border-accent-navy/60 transition-colors shadow-sm"
+        class="absolute top-3 left-3 z-20 bg-dark-bg/40 light:bg-warm-50/50 backdrop-blur-md px-2.5 py-1 rounded text-[0.625rem] font-mono uppercase tracking-wider text-dark-text/90 light:text-warm-900 border border-white/15 light:border-black/15 group-hover:border-white/30 light:group-hover:border-black/30 transition-colors shadow-sm"
       >
         {{ badgeText }}
       </div>
@@ -44,7 +44,7 @@
       <!-- Prominent Bottom-Right Location Transparent Glass Card -->
       <div
         v-if="locationText"
-        class="absolute bottom-3.5 right-3.5 z-20 max-w-[88%] bg-dark-bg/40 light:bg-warm-50/50 backdrop-blur-lg px-3.5 py-2.5 rounded-lg border border-white/15 light:border-black/15 shadow-xl shadow-black/30 group-hover:border-accent-navy/60 group-hover:bg-dark-bg/50 transition-all duration-300"
+        class="absolute bottom-3.5 right-3.5 z-20 max-w-[88%] bg-dark-bg/40 light:bg-warm-50/50 backdrop-blur-lg px-3.5 py-2.5 rounded-lg border border-white/15 light:border-black/15 shadow-xl shadow-black/30 group-hover:border-white/30 light:group-hover:border-black/30 group-hover:bg-dark-bg/50 transition-all duration-300"
       >
         <div class="flex items-center gap-2.5">
           <span class="text-sm">📍</span>

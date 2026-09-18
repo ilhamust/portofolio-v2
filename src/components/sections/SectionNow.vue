@@ -15,7 +15,7 @@
           
           <!-- Left Side: Headline & Focus Narrative -->
           <div class="lg:col-span-8 space-y-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-dark-text light:text-warm-900 leading-tight">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-dark-text light:text-warm-900 leading-tight">
               {{ t('now.headline') }}
             </h2>
 
@@ -36,7 +36,7 @@
                 {{ t('now.availableLabel') }}
               </span>
 
-              <h3 class="text-lg md:text-xl font-serif font-medium text-dark-text light:text-warm-900 leading-snug">
+              <h3 class="text-lg md:text-xl font-sans font-semibold text-dark-text light:text-warm-900 leading-snug">
                 {{ t('now.availableValue') }}
               </h3>
             </div>

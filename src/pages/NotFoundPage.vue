@@ -4,7 +4,7 @@
       <span class="text-xs font-mono uppercase tracking-widest text-warm-600 dark:text-dark-muted mb-2 block">
         404 / Page Not Found
       </span>
-      <h1 class="text-3xl font-serif mb-4">Halaman Tidak Ditemukan</h1>
+      <h1 class="text-3xl font-sans font-bold mb-4">Halaman Tidak Ditemukan</h1>
       <p class="text-sm text-warm-700 dark:text-dark-muted mb-6">
         Halaman yang Anda cari tidak tersedia atau telah dipindahkan.
       </p>

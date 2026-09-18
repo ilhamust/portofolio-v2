@@ -11,7 +11,7 @@
       v-for="(slat, index) in slatsCount"
       :key="index"
       :class="[
-        'relative flex-1 h-full overflow-hidden rounded-xs bg-dark-surface border-thin transition-all duration-500 ease-out group-hover:border-accent-navy/50',
+        'relative flex-1 h-full overflow-hidden rounded-xs bg-dark-surface border-thin transition-all duration-500 ease-out group-hover:border-dark-text/30 light:group-hover:border-warm-400',
         slatOffsets[index % slatOffsets.length]
       ]"
     >

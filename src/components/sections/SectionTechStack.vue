@@ -1,42 +1,64 @@
 <template>
-  <section id="techstack" class="py-14 lg:py-20 border-t border-thin scroll-mt-20">
+  <section id="techstack" class="py-14 lg:py-20 border-t border-thin scroll-mt-20 relative select-none overflow-hidden">
     <BaseContainer size="wide" :padding="true">
-      <div class="space-y-12 md:space-y-16">
+      <div class="space-y-8 sm:space-y-12">
         
         <!-- Header & Headline Split Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-4 space-y-4">
-            <span class="text-xs font-mono text-dark-muted light:text-warm-600 uppercase tracking-widest block">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-2 max-w-xl">
+            <span class="text-[0.6875rem] font-mono text-accent-navy font-semibold uppercase tracking-widest block">
               {{ t('techStack.sectionNum') }}
             </span>
-
-            <h2 class="text-2xl sm:text-3xl font-serif text-dark-text light:text-warm-900 leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 leading-tight">
               {{ t('techStack.headline') }}
             </h2>
+          </div>
 
-            <p class="text-xs md:text-sm text-dark-muted light:text-warm-700 font-light leading-relaxed">
-              {{ t('techStack.description') }}
+          <p class="text-xs sm:text-sm text-dark-muted light:text-warm-700 font-light leading-relaxed max-w-md">
+            {{ t('techStack.description') }}
+          </p>
+        </div>
+
+        <!-- Minimalist Line Grid Marquee Band (Hanya Garis-Garis Bersih & Minimalis seperti Contoh Laravel) -->
+        <div class="border-y border-x border-thin flex flex-col md:flex-row items-stretch">
+          
+          <!-- Sisi Kiri: Fixed Monospace Text Cell (Dibatasi Garis Vertikal) -->
+          <div class="w-full md:w-64 lg:w-72 shrink-0 py-6 px-6 lg:px-8 border-b md:border-b-0 md:border-r border-thin flex flex-col justify-center bg-dark-bg/95 light:bg-warm-50/95 z-20">
+            <span class="text-[0.625rem] font-mono text-accent-navy font-bold uppercase tracking-widest block pb-1">
+              {{ t('techStack.tag') }}
+            </span>
+            <p class="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-dark-text light:text-warm-900 leading-snug">
+              {{ t('techStack.marqueeTitle1') }}<br class="hidden sm:inline" />
+              {{ t('techStack.marqueeTitle2') }}
             </p>
           </div>
 
-          <!-- 6x2 Tech Stack Grid (12 Items - Presisi Referensi 0) -->
-          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            <div
-              v-for="tech in cvData.techStack"
-              :key="tech.name"
-              class="bg-dark-surface light:bg-warm-100 border border-thin rounded-lg p-4 flex flex-col items-center justify-center gap-3 text-center hover:border-accent-navy/40 transition-colors group cursor-default"
-            >
-              <!-- Icon Box -->
-              <div class="w-10 h-10 flex items-center justify-center text-dark-text light:text-warm-900 group-hover:text-accent-navy transition-colors">
-                <component :is="getTechIconComponent(tech.icon)" class="w-6 h-6 stroke-[1.5]" />
-              </div>
+          <!-- Sisi Kanan: Moving Logo Cells dengan Pembatas Garis Vertikal Antar Logo -->
+          <div class="relative grow overflow-hidden flex items-center min-h-[80px] sm:min-h-[96px] bg-transparent">
+            <!-- Edge Fade Masks (Gradasi Halus Kiri & Kanan) -->
+            <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-dark-bg light:from-warm-50 to-transparent pointer-events-none z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-dark-bg light:from-warm-50 to-transparent pointer-events-none z-10"></div>
 
-              <!-- Label -->
-              <span class="text-xs font-mono font-medium text-dark-text light:text-warm-900">
-                {{ tech.name }}
-              </span>
+            <!-- Moving Logo Track -->
+            <div class="flex animate-marquee hover:[animation-play-state:paused] h-full items-stretch">
+              <div
+                v-for="(tech, idx) in duplicatedTechStack"
+                :key="`${tech.name}-${idx}`"
+                class="flex items-center gap-3.5 px-8 sm:px-12 py-5 sm:py-6 border-r border-thin shrink-0 group/item hover:bg-white/[0.03] light:hover:bg-black/[0.02] transition-colors duration-200 cursor-default select-none"
+              >
+                <!-- Brand Vector SVG Icon -->
+                <div class="text-dark-text light:text-warm-900 group-hover/item:scale-110 transition-transform duration-300">
+                  <TechBrandIcon :name="tech.icon" />
+                </div>
+
+                <!-- Brand Name Monospace Minimalis -->
+                <span class="text-xs sm:text-sm font-mono font-medium tracking-wide text-dark-text light:text-warm-900 whitespace-nowrap">
+                  {{ tech.name }}
+                </span>
+              </div>
             </div>
           </div>
+
         </div>
 
       </div>
@@ -45,41 +67,38 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { BaseContainer } from '@/components/base'
+import TechBrandIcon from '@/components/common/TechBrandIcon.vue'
 import { cvData } from '@/data/cv.data.js'
 import { useI18n } from '@/composables/useI18n'
-import {
-  Code,
-  Layers,
-  Atom,
-  Server,
-  Terminal,
-  FileCode,
-  Database,
-  GitBranch,
-  Box,
-  Figma as FigmaIcon,
-  Smartphone
-} from 'lucide-vue-next'
 
 const { t } = useI18n()
 
-// Icon mapping untuk 12 teknologi referensi0
-const getTechIconComponent = (iconKey) => {
-  const iconMap = {
-    laravel: Code,
-    vue: Layers,
-    react: Atom,
-    nodejs: Server,
-    express: Terminal,
-    php: FileCode,
-    mysql: Database,
-    postgresql: Database,
-    git: GitBranch,
-    docker: Box,
-    figma: FigmaIcon,
-    flutter: Smartphone
-  }
-  return iconMap[iconKey] || Code
-}
+// Duplikasi tech stack 3 kali untuk animasi loop mulus tanpa celah
+const duplicatedTechStack = computed(() => {
+  return [...cvData.techStack, ...cvData.techStack, ...cvData.techStack]
+})
 </script>
+
+<style scoped>
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333333%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+</style>

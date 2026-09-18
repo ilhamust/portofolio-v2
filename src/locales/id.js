@@ -5,7 +5,6 @@ export const id = {
     projects: 'proyek',
     techStack: 'tech stack',
     experience: 'pengalaman',
-    explore: 'eksplorasi',
     now: 'sekarang',
     contact: 'kontak'
   },
@@ -24,9 +23,8 @@ export const id = {
   about: {
     sectionNum: '02 / TENTANG',
     headline: 'Berpikir mendalam, berproses terstruktur, selalu belajar.',
-    description: 'Saya adalah mahasiswa Informatika yang memiliki ketertarikan besar pada pengembangan aplikasi dan pengalaman digital. Saya menikmati proses membangun sesuatu yang bermanfaat dan berdampak bagi orang lain.',
-    extendedBio1: 'Di balik kode, saya adalah pribadi yang tenang, introspektif, dan memiliki standar internal yang tinggi terhadap apa yang saya kerjakan. Saya menyukai kejelasan, struktur, dan perencanaan—menyeimbangkan intuisi dengan analisis logis untuk memastikan setiap sistem yang dibangun memiliki fondasi yang kuat, rapi, dan bermakna.',
-    extendedBio2: 'Perjalanan saya berkembang dari pemahaman perangkat keras dan jaringan komputer, sebelum mendalami rekayasa web dan mobile modern seperti Laravel, Vue, React, dan Flutter. Saya juga mendedikasikan waktu sebagai Asisten Laboratorium Pemrograman Web membimbing 30+ mahasiswa serta memimpin komunitas belajar Study Jam di kampus.',
+    paragraph1: 'Saya adalah seseorang yang senang mengubah ide menjadi pengalaman digital yang bermakna. Berbekal latar belakang Informatika, saya tertarik pada titik temu antara teknologi dan desain—di mana sebuah solusi tidak hanya fungsional, tetapi juga terasa matang dan bertujuan jelas. Saya senang mengeksplorasi hal-hal baru, belajar dari pengalaman langsung, dan menantang diri untuk melampaui apa yang sudah saya ketahui.',
+    paragraph2: 'Bagi saya, setiap proyek lebih dari sekadar tugas untuk diselesaikan. Ini adalah kesempatan untuk belajar, bereksperimen, dan meninggalkan sesuatu yang berarti. Saya memiliki rasa ingin tahu alami dan reflektif, selalu mencari cara untuk meningkatkan kualitas karya maupun proses kerja saya. Saya percaya karya yang baik lahir dari keseimbangan antara logika dan kreativitas. Selalu ada hal baru untuk dipelajari, dijelajahi, dan dibangun.',
     moreAboutMe: 'LEBIH BANYAK TENTANG SAYA',
     readLess: 'TAMPILKAN LEBIH SEDIKIT',
     values: {
@@ -70,25 +68,14 @@ export const id = {
   },
   experience: {
     sectionNum: '05 / PENGALAMAN',
-    viewFullJourney: 'LIHAT PERJALANAN LENGKAP'
-  },
-  explore: {
-    sectionNum: '06 / YANG SAYA EKSPLORASI',
-    currentFocus: {
-      title: 'Saat ini fokus',
-      items: ['Vue.js', 'Frontend Architecture', 'UI/UX Craft', 'Personal Projects']
-    },
-    learning: {
-      title: 'Sedang belajar',
-      items: ['Advanced Vue', 'System Design', 'Product Thinking', 'Animation & Motion']
-    },
-    interested: {
-      title: 'Tertarik pada',
-      items: ['Digital Products', 'Developer Tools', 'Design Systems', 'AI & Automation']
-    }
+    tag: 'TEMPAT SAYA BERKONTRIBUSI',
+    headline: 'Pengalaman Profesional',
+    viewFullJourney: 'LIHAT PERJALANAN LENGKAP',
+    responsibilities: 'Tanggung Jawab & Kontribusi',
+    technologies: 'Teknologi & Keterampilan'
   },
   now: {
-    sectionNum: '07 / SEKARANG',
+    sectionNum: '06 / SEKARANG',
     headline: 'Sedang membangun. Selalu mengeksplorasi.',
     focusLabel: 'FOKUS SAAT INI',
     focusDescription: 'Membangun proyek pribadi, memperdalam Vue.js, dan mengeksplorasi cara teknologi dapat memberikan memberikan pengalaman yang lebih bermakna.',
@@ -96,7 +83,7 @@ export const id = {
     availableValue: 'Internship & Fulltime Opportunities'
   },
   contact: {
-    sectionNum: '08 / KONTAK',
+    sectionNum: '07 / KONTAK',
     headline: 'Mari membangun sesuatu yang berarti bersama.',
     email: 'EMAIL',
     linkedin: 'LINKEDIN',
