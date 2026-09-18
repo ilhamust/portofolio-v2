@@ -107,18 +107,22 @@ export function useActiveSection(sectionIds = SECTION_IDS) {
 
   onMounted(() => {
     if (typeof window !== 'undefined') {
+      // 1. Matikan scroll restoration bawaan browser agar tidak lompat ke posisi scroll lama saat di-refresh
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'
+      }
+
+      // 2. Selalu mulai dari posisi teratas (Hero / Home) saat refresh
+      window.scrollTo(0, 0)
+      if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname)
+      }
+
       window.addEventListener('scroll', handleScroll, { passive: true })
     }
 
     setTimeout(() => {
       initObserver()
-
-      if (window.location.hash) {
-        const initialId = window.location.hash.replace('#', '')
-        if (sectionIds.includes(initialId)) {
-          scrollToSection(initialId)
-        }
-      }
     }, 100)
   })
 
