@@ -70,7 +70,7 @@ export const en = {
   experience: {
     sectionNum: '05 / EXPERIENCE',
     tag: 'TEAMS I WORKED WITH',
-    headline: 'My Professional Experiences',
+    headline: 'My Journey & Experience',
     viewFullJourney: 'VIEW FULL JOURNEY',
     responsibilities: 'Responsibilities & Key Highlights',
     technologies: 'Technologies & Tools'

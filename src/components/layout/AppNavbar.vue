@@ -1,5 +1,20 @@
 <template>
-  <header class="sticky top-0 z-50 w-full bg-dark-bg/90 light:bg-warm-50/90 backdrop-blur-md border-b border-thin transition-colors duration-300 select-none">
+  <header
+    :class="[
+      'fixed top-0 left-0 right-0 z-50 w-full select-none transition-all duration-300',
+      isScrolled
+        ? 'backdrop-blur-xl bg-dark-bg/75 light:bg-warm-50/80 border-b border-white/[0.08] light:border-black/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.35)] light:shadow-[0_4px_20px_rgba(0,0,0,0.04)]'
+        : 'bg-transparent border-b border-transparent'
+    ]"
+  >
+    <!-- ─── Horizontal Scroll Progress Bar on Top Edge of Navbar ─── -->
+    <div class="absolute top-0 left-0 right-0 h-[2.5px] bg-white/[0.03] dark:bg-white/[0.02] overflow-hidden pointer-events-none">
+      <div
+        class="h-full bg-gradient-to-r from-accent-navy via-blue-400 to-accent-navy shadow-[0_0_10px_rgba(29,78,216,0.85)] transition-all duration-75 ease-out will-change-[width]"
+        :style="{ width: `${scrollProgress}%` }"
+      />
+    </div>
+
     <BaseContainer size="wide" :padding="true">
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- ─── Left Side: Accent Box + Branding (Presisi Referensi 0) ─── -->
@@ -81,7 +96,7 @@
     >
       <div
         v-if="isMobileMenuOpen"
-        class="lg:hidden border-t border-thin bg-dark-bg light:bg-warm-50 px-6 py-6 space-y-3"
+        class="lg:hidden border-t border-thin bg-dark-bg/95 light:bg-warm-50/95 backdrop-blur-xl px-6 py-6 space-y-3"
       >
         <button
           v-for="nav in navItems"
@@ -103,7 +118,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { BaseContainer } from '@/components/base'
 import { Menu, X } from 'lucide-vue-next'
 import { useI18n } from '@/composables/useI18n'
@@ -118,7 +133,11 @@ const props = defineProps({
 const emit = defineEmits(['navigate'])
 
 const { lang, t, setLanguage } = useI18n()
+
 const isMobileMenuOpen = ref(false)
+const isScrolled = ref(false)
+const scrollProgress = ref(0)
+let ticking = false
 
 // 6 Sections
 const navItems = [
@@ -142,4 +161,32 @@ const handleMobileNavClick = (sectionId) => {
 const toggleLang = () => {
   setLanguage(lang.value === 'en' ? 'id' : 'en')
 }
+
+const handleScroll = () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const scrollY = window.scrollY || window.pageYOffset
+      isScrolled.value = scrollY > 20
+
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (docHeight > 0) {
+        scrollProgress.value = Math.min(Math.max((scrollY / docHeight) * 100, 0), 100)
+      } else {
+        scrollProgress.value = 0
+      }
+
+      ticking = false
+    })
+    ticking = true
+  }
+}
+
+onMounted(() => {
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>

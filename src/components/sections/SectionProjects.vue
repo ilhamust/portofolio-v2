@@ -5,21 +5,31 @@
         
         <!-- Header: Case Studies Tag + Headline (Left) x "See recent work" Pill Button (Right) -->
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
-          <div class="space-y-1">
-            <span class="text-[0.6875rem] font-mono text-accent-navy font-semibold uppercase tracking-widest block">
-              {{ t('projects.tag') }}
-            </span>
+          <div
+            v-motion
+            :initial="{ opacity: 0, x: -20 }"
+            :visible="{ opacity: 1, x: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 40 } }"
+            class="space-y-1"
+          >
+            <TextScramble
+              :text="t('projects.sectionNum')"
+              :duration="550"
+              class="text-[0.6875rem] font-mono text-accent-navy font-semibold uppercase tracking-widest block"
+            />
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 tracking-tight leading-none">
               {{ t('projects.headline') }}
             </h2>
           </div>
 
-          <!-- Right: "See recent work" Pill Button -->
+          <!-- Right: "See recent work" Pill Button with subtle scale pop -->
           <a
+            v-motion
+            :initial="{ opacity: 0, scale: 0.88 }"
+            :visible="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 160, damping: 16, delay: 100 } }"
             href="https://github.com/ilhamust"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 pl-3.5 pr-2 py-1.5 rounded-full border border-thin text-xs font-mono tracking-wide text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 transition-all duration-200 group bg-dark-surface/60 light:bg-warm-100/60 shrink-0 self-start sm:self-auto"
+            class="inline-flex items-center gap-2 pl-3.5 pr-2 py-1.5 rounded-full border border-thin text-xs font-mono tracking-wide text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 transition-all duration-200 group bg-dark-surface/60 light:bg-warm-100/60 shrink-0 self-start sm:self-auto shadow-xs"
           >
             <span>{{ t('projects.seeRecentWork') }}</span>
             <span class="w-5 h-5 rounded-full bg-dark-bg light:bg-warm-200 flex items-center justify-center text-[0.6875rem] text-dark-muted light:text-warm-700 group-hover:text-dark-text light:group-hover:text-warm-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
@@ -28,10 +38,13 @@
           </a>
         </div>
 
-        <!-- Horizontal Scrollable Showcase Track (Scroll to Shift Projects) -->
+        <!-- Horizontal Scrollable Showcase Track with Lateral Sweeping Unveil from Right (Re-triggers with :visible) -->
         <div
           ref="scrollContainer"
           @scroll="onScroll"
+          v-motion
+          :initial="{ opacity: 0, x: 36, scale: 0.98 }"
+          :visible="{ opacity: 1, x: 0, scale: 1, transition: { duration: 550, ease: [0.16, 1, 0.3, 1], delay: 140 } }"
           class="flex gap-4 lg:gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none py-1 select-none"
           style="scrollbar-width: none; -ms-overflow-style: none;"
         >
@@ -39,7 +52,7 @@
             v-for="project in projectsData"
             :key="project.id"
             tabindex="0"
-            class="w-[85vw] sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)] shrink-0 snap-start bg-dark-surface light:bg-warm-100 border border-thin rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-dark-text/30 light:hover:border-warm-400 transition-colors duration-300 shadow-sm focus:outline-none focus-within:border-accent-navy/60 relative"
+            class="w-[85vw] sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)] shrink-0 snap-start glass-editorial-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 focus:outline-none focus-within:border-accent-navy/60 relative"
           >
             <!-- 1. Bagian Atas: Gambar Mockup Full-Bleed + Frosted Curtain saat di-Hover -->
             <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#0d0d0d] shrink-0">
@@ -232,6 +245,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { BaseContainer } from '@/components/base'
 import TechBadge from '@/components/common/TechBadge.vue'
+import TextScramble from '@/components/common/TextScramble.vue'
 import { projectsData } from '@/data/projects.data.js'
 import { useI18n } from '@/composables/useI18n'
 

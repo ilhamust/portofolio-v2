@@ -70,7 +70,7 @@ export const id = {
   experience: {
     sectionNum: '05 / PENGALAMAN',
     tag: 'TIM TEMPAT SAYA BERKONTRIBUSI',
-    headline: 'Pengalaman Profesional Saya',
+    headline: 'Perjalanan & Pengalaman Saya',
     viewFullJourney: 'LIHAT PERJALANAN LENGKAP',
     responsibilities: 'Tanggung Jawab & Sorotan Utama',
     technologies: 'Teknologi & Tools'

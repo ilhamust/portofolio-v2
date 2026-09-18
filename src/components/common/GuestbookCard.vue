@@ -3,7 +3,7 @@
     :class="[
       ratioClass,
       standalone ? 'w-[260px] sm:w-[280px] h-[160px] shrink-0' : 'w-full min-h-0',
-      'bg-dark-surface light:bg-warm-100 border border-thin rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between transition-all duration-300 hover:border-dark-text/40 light:hover:border-warm-400 shadow-xs group select-none relative overflow-hidden'
+      'glass-editorial-card rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between transition-all duration-300 hover:border-dark-text/40 light:hover:border-warm-400 shadow-xs group select-none relative overflow-hidden'
     ]"
   >
     <!-- Card Header: Avatar Initial, Name, Pending Badge & Relative Date -->

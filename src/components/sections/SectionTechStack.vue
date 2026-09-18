@@ -3,24 +3,41 @@
     <BaseContainer size="wide" :padding="true">
       <div class="space-y-8 sm:space-y-12">
         
-        <!-- Header & Headline Split Layout -->
+        <!-- Header & Headline Split Layout with Motion -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div class="space-y-2 max-w-xl">
-            <span class="text-[0.6875rem] font-mono text-accent-navy font-semibold uppercase tracking-widest block">
-              {{ t('techStack.sectionNum') }}
-            </span>
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 16 }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 40 } }"
+            class="space-y-2 max-w-xl"
+          >
+            <TextScramble
+              :text="t('techStack.sectionNum')"
+              :duration="550"
+              class="text-[0.6875rem] font-mono text-accent-navy font-semibold uppercase tracking-widest block"
+            />
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 leading-tight">
               {{ t('techStack.headline') }}
             </h2>
           </div>
 
-          <p class="text-xs sm:text-sm text-dark-muted light:text-warm-700 font-light leading-relaxed max-w-md">
+          <p
+            v-motion
+            :initial="{ opacity: 0, y: 16 }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 90 } }"
+            class="text-xs sm:text-sm text-dark-muted light:text-warm-700 font-light leading-relaxed max-w-md"
+          >
             {{ t('techStack.description') }}
           </p>
         </div>
 
-        <!-- Minimalist Line Grid Marquee Band (Hanya Garis-Garis Bersih & Minimalis seperti Contoh Laravel) -->
-        <div class="border-y border-x border-thin flex flex-col md:flex-row items-stretch">
+        <!-- Minimalist Line Grid Marquee Band with Atmospheric Scale Reveal (Re-triggers with :visible) -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, scale: 0.96 }"
+          :visible="{ opacity: 1, scale: 1, transition: { duration: 550, ease: [0.16, 1, 0.3, 1], delay: 140 } }"
+          class="border-y border-x border-thin flex flex-col md:flex-row items-stretch shadow-xs"
+        >
           
           <!-- Sisi Kiri: Fixed Monospace Text Cell (Dibatasi Garis Vertikal) -->
           <div class="w-full md:w-64 lg:w-72 shrink-0 py-6 px-6 lg:px-8 border-b md:border-b-0 md:border-r border-thin flex flex-col justify-center bg-dark-bg/95 light:bg-warm-50/95 z-20">
@@ -70,6 +87,7 @@
 import { computed } from 'vue'
 import { BaseContainer } from '@/components/base'
 import TechBrandIcon from '@/components/common/TechBrandIcon.vue'
+import TextScramble from '@/components/common/TextScramble.vue'
 import { cvData } from '@/data/cv.data.js'
 import { useI18n } from '@/composables/useI18n'
 

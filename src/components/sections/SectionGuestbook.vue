@@ -9,31 +9,51 @@
           <div class="space-y-2 max-w-2xl">
             <!-- Small Pretitle Tag with Dash -->
             <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase">
-              <span class="text-accent-navy font-semibold">{{ t('now.sectionNum') }}</span>
+              <TextScramble :text="t('now.sectionNum')" :duration="550" class="text-accent-navy font-semibold" />
               <span class="text-dark-muted/40 light:text-warm-400">—</span>
               <span class="text-dark-muted light:text-warm-600">{{ t('now.tag') }}</span>
             </div>
 
             <!-- Headline -->
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 tracking-tight leading-tight">
+            <h2
+              v-motion
+              :initial="{ opacity: 0, y: 16 }"
+              :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 40 } }"
+              class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 tracking-tight leading-tight"
+            >
               {{ t('now.headline') }}
             </h2>
 
             <!-- Subtitle Description -->
-            <p class="text-xs sm:text-sm text-dark-muted light:text-warm-700 font-light leading-relaxed pt-1">
+            <p
+              v-motion
+              :initial="{ opacity: 0, y: 16 }"
+              :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 90 } }"
+              class="text-xs sm:text-sm text-dark-muted light:text-warm-700 font-light leading-relaxed pt-1"
+            >
               {{ t('now.description') }}
             </p>
           </div>
 
-          <!-- Right: Total Message Counter Pill -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-thin bg-dark-surface/60 light:bg-warm-100/60 text-xs font-mono text-dark-muted light:text-warm-700 shrink-0 self-start sm:self-auto">
+          <!-- Right: Total Message Counter Pill with Spring Pop -->
+          <div
+            v-motion
+            :initial="{ opacity: 0, scale: 0.82 }"
+            :visible="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 160, damping: 15, delay: 90 } }"
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-thin bg-dark-surface/60 light:bg-warm-100/60 text-xs font-mono text-dark-muted light:text-warm-700 shrink-0 self-start sm:self-auto shadow-xs"
+          >
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span>{{ messages.length }} {{ t('now.countLabel') }}</span>
           </div>
         </div>
 
-        <!-- 1. Interactive Form Container (Minimalist, Elevated, Responsive) -->
-        <div class="bg-dark-surface/60 light:bg-warm-100 border border-thin rounded-2xl p-5 sm:p-7 shadow-xs">
+        <!-- 1. Interactive Form Container with Tactile Elevation Motion (Re-triggers with :visible) -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 28, scale: 0.98 }"
+          :visible="{ opacity: 1, y: 0, scale: 1, transition: { duration: 500, ease: [0.16, 1, 0.3, 1], delay: 130 } }"
+          class="glass-editorial-card rounded-2xl p-5 sm:p-7 shadow-xs"
+        >
           <form @submit.prevent="handleSubmit" class="space-y-4">
             <!-- Two Columns for Name & Email -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -164,9 +184,12 @@
             </p>
           </div>
 
-          <!-- Outer Showcase Container: Clean horizontal track without outer border -->
+          <!-- Outer Showcase Container: Clean horizontal track without outer border with Motion -->
           <div
             v-else
+            v-motion
+            :initial="{ opacity: 0, y: 24 }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 550, ease: [0.16, 1, 0.3, 1], delay: 180 } }"
             class="overflow-hidden relative py-2 [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]"
           >
             <!-- A. Mobile View (< sm): 1 Row of cards running smoothly -->
@@ -216,6 +239,7 @@
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import { BaseContainer } from '@/components/base'
 import GuestbookCard from '@/components/common/GuestbookCard.vue'
+import TextScramble from '@/components/common/TextScramble.vue'
 import {
   fetchGuestbookMessages,
   saveGuestbookMessage,

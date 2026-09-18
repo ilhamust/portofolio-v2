@@ -3,22 +3,34 @@
     <BaseContainer size="wide" :padding="true" class="w-full">
       <div class="space-y-6 md:space-y-8 lg:space-y-10">
         
-        <!-- Section Header Monospace Tag -->
+        <!-- Section Header Monospace Tag with Cyber-Terminal Decoder -->
         <div class="flex items-center justify-between">
-          <span class="text-xs font-mono text-accent-navy font-semibold uppercase tracking-widest">
-            {{ t('about.sectionNum') }}
-          </span>
+          <TextScramble
+            :text="t('about.sectionNum')"
+            :duration="550"
+            class="text-xs font-mono text-accent-navy font-semibold uppercase tracking-widest"
+          />
         </div>
 
         <!-- Split Layout: Headline Serif (Left) x Paragraf Description (Right) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-          <div class="lg:col-span-6 space-y-3">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 20 }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 40 } }"
+            class="lg:col-span-6 space-y-3"
+          >
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 leading-snug">
               {{ t('about.headline') }}
             </h2>
           </div>
 
-          <div class="lg:col-span-6 space-y-4">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 20 }"
+            :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 100 } }"
+            class="lg:col-span-6 space-y-4"
+          >
             <!-- Paragraph 1 (Always Visible Intro) -->
             <p class="text-xs sm:text-sm md:text-base text-dark-muted light:text-warm-700 font-light leading-relaxed">
               {{ t('about.paragraph1') }}
@@ -39,26 +51,26 @@
             <!-- Expand / Collapse Toggle Button -->
             <div class="pt-1">
               <button
-                type="button"
                 @click="toggleExpand"
-                class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-dark-text light:text-warm-900 hover:underline font-semibold group cursor-pointer focus:outline-none"
+                class="inline-flex items-center gap-2 text-xs font-mono text-accent-navy hover:underline cursor-pointer uppercase tracking-wider font-semibold focus:outline-none"
+                :aria-expanded="isExpanded"
               >
                 <span>{{ isExpanded ? t('about.readLess') : t('about.moreAboutMe') }}</span>
-                <span
-                  class="transition-transform duration-300"
-                  :class="isExpanded ? '-translate-y-0.5' : 'group-hover:translate-x-1'"
-                >
-                  {{ isExpanded ? '↑' : '→' }}
-                </span>
+                <span class="transition-transform duration-300" :class="{ 'rotate-180': isExpanded }">↓</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- 4 Value Cards Grid (Presisi 1-Page Laptop Layout) -->
+        <!-- 4 Value Cards Grid with Tactile Spring Pop (Re-triggers on scroll with :visible) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 pt-2">
           <!-- Value Card 1: Process -->
-          <div class="bg-dark-surface light:bg-warm-100 border border-thin p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 30, scale: 0.94 }"
+            :visible="{ opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 140, damping: 16, delay: 140 } }"
+            class="glass-editorial-card p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs"
+          >
             <div class="w-8 h-8 flex items-center justify-center text-accent-navy group-hover:scale-110 transition-transform">
               <Code class="w-5 h-5" />
             </div>
@@ -71,7 +83,12 @@
           </div>
 
           <!-- Value Card 2: Collaborative -->
-          <div class="bg-dark-surface light:bg-warm-100 border border-thin p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 30, scale: 0.94 }"
+            :visible="{ opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 140, damping: 16, delay: 200 } }"
+            class="glass-editorial-card p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs"
+          >
             <div class="w-8 h-8 flex items-center justify-center text-accent-navy group-hover:scale-110 transition-transform">
               <Users class="w-5 h-5" />
             </div>
@@ -84,7 +101,12 @@
           </div>
 
           <!-- Value Card 3: Structured -->
-          <div class="bg-dark-surface light:bg-warm-100 border border-thin p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 30, scale: 0.94 }"
+            :visible="{ opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 140, damping: 16, delay: 260 } }"
+            class="glass-editorial-card p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs"
+          >
             <div class="w-8 h-8 flex items-center justify-center text-accent-navy group-hover:scale-110 transition-transform">
               <Layers class="w-5 h-5" />
             </div>
@@ -97,7 +119,12 @@
           </div>
 
           <!-- Value Card 4: Learning -->
-          <div class="bg-dark-surface light:bg-warm-100 border border-thin p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 30, scale: 0.94 }"
+            :visible="{ opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 140, damping: 16, delay: 320 } }"
+            class="glass-editorial-card p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs"
+          >
             <div class="w-8 h-8 flex items-center justify-center text-accent-navy group-hover:scale-110 transition-transform">
               <BookOpen class="w-5 h-5" />
             </div>
@@ -118,6 +145,7 @@
 <script setup>
 import { ref } from 'vue'
 import { BaseContainer } from '@/components/base'
+import TextScramble from '@/components/common/TextScramble.vue'
 import { Code, Users, Layers, BookOpen } from 'lucide-vue-next'
 import { useI18n } from '@/composables/useI18n'
 

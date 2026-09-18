@@ -8,13 +8,18 @@
           <div class="space-y-2">
             <!-- Small Pretitle Tag with Dash -->
             <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase">
-              <span class="text-accent-navy font-semibold">{{ t('experience.sectionNum') }}</span>
+              <TextScramble :text="t('experience.sectionNum')" :duration="550" class="text-accent-navy font-semibold" />
               <span class="text-dark-muted/40 light:text-warm-400">—</span>
               <span class="text-dark-muted light:text-warm-600">{{ t('experience.tag') }}</span>
             </div>
 
             <!-- Big Bold Editorial Headline -->
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 tracking-tight leading-tight">
+            <h2
+              v-motion
+              :initial="{ opacity: 0, y: 16 }"
+              :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 40 } }"
+              class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 tracking-tight leading-tight"
+            >
               {{ t('experience.headline') }}
             </h2>
           </div>
@@ -24,6 +29,9 @@
             :href="cvData.linkedin"
             target="_blank"
             rel="noopener noreferrer"
+            v-motion
+            :initial="{ opacity: 0, scale: 0.88 }"
+            :visible="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 160, damping: 16, delay: 90 } }"
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-thin text-xs font-mono tracking-wide text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 transition-all duration-200 group bg-dark-surface/60 light:bg-warm-100/60 self-start sm:self-auto shrink-0 shadow-xs"
           >
             <span>{{ t('experience.viewFullJourney') }}</span>
@@ -38,11 +46,14 @@
           <!-- Continuous Vertical Rail Track -->
           <div class="absolute left-2.5 sm:left-4 top-8 bottom-8 w-px bg-dark-border light:bg-warm-200 pointer-events-none"></div>
 
-          <!-- Experience Items List -->
+          <!-- Experience Items List with Rail Outward Branch Motion (Re-triggers with :visible) -->
           <div class="space-y-4 sm:space-y-5">
             <div
-              v-for="item in experienceData"
+              v-for="(item, index) in experienceData"
               :key="item.id"
+              v-motion
+              :initial="{ opacity: 0, x: -20 }"
+              :visible="{ opacity: 1, x: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 130 + (index * 60) } }"
               class="relative group"
             >
               <!-- Timeline Indicator Node (Left Rail Marker) -->
@@ -68,11 +79,11 @@
 
               <!-- Main Card Container -->
               <div
-                class="bg-dark-surface light:bg-warm-100 border rounded-2xl transition-all duration-300 overflow-hidden shadow-xs"
+                class="glass-editorial-card rounded-2xl transition-all duration-300 overflow-hidden shadow-xs"
                 :class="[
                   isExpanded(item.id)
                     ? 'border-dark-text/30 light:border-warm-400 shadow-sm'
-                    : 'border-thin hover:border-dark-hover light:hover:border-warm-300'
+                    : 'hover:border-dark-hover light:hover:border-warm-300'
                 ]"
               >
                 <!-- Card Header (Clickable Toggle Trigger) -->
@@ -222,6 +233,7 @@
 <script setup>
 import { ref } from 'vue'
 import { BaseContainer } from '@/components/base'
+import TextScramble from '@/components/common/TextScramble.vue'
 import { experienceData } from '@/data/experience.data.js'
 import { cvData } from '@/data/cv.data.js'
 import { useI18n } from '@/composables/useI18n'
