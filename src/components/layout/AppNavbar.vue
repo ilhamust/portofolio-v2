@@ -25,7 +25,7 @@
         >
           <!-- Brand Logo Image -->
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="Ilham Logo"
             class="w-6 h-6 md:w-6.5 md:h-6.5 object-contain shrink-0 group-hover:scale-105 transition-transform duration-300 rounded-xs"
           />

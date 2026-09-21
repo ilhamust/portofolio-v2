@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="min-h-[calc(100vh-80px)] flex items-center py-8 lg:py-12 border-t border-thin scroll-mt-20 relative select-none">
+  <section id="about" class="py-12 sm:py-16 md:py-10 md:min-h-[calc(100vh-80px)] md:flex md:items-center lg:py-12 border-t border-thin scroll-mt-20 relative select-none">
     <BaseContainer size="wide" :padding="true" class="w-full">
       <div class="space-y-6 md:space-y-8 lg:space-y-10">
         
@@ -13,12 +13,12 @@
         </div>
 
         <!-- Split Layout: Headline Serif (Left) x Paragraf Description (Right) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-start">
           <div
             v-motion
             :initial="{ opacity: 0, y: 20 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 40 } }"
-            class="lg:col-span-6 space-y-3"
+            class="col-span-1 md:col-span-5 lg:col-span-5 space-y-2.5 sm:space-y-3"
           >
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 leading-snug">
               {{ t('about.headline') }}
@@ -29,7 +29,7 @@
             v-motion
             :initial="{ opacity: 0, y: 20 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 450, ease: [0.16, 1, 0.3, 1], delay: 100 } }"
-            class="lg:col-span-6 space-y-4"
+            class="col-span-1 md:col-span-7 lg:col-span-7 space-y-3.5 sm:space-y-4"
           >
             <!-- Paragraph 1 (Always Visible Intro) -->
             <p class="text-xs sm:text-sm md:text-base text-dark-muted light:text-warm-700 font-light leading-relaxed">
@@ -63,13 +63,13 @@
         </div>
 
         <!-- 4 Value Cards Grid with Tactile Spring Pop (Re-triggers on scroll with :visible) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 pt-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5 pt-2">
           <!-- Value Card 1: Process -->
           <div
             v-motion
             :initial="{ opacity: 0, y: 30, scale: 0.94 }"
             :visible="{ opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 140, damping: 16, delay: 140 } }"
-            class="glass-editorial-card p-4 sm:p-5 rounded-lg space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs"
+            class="glass-editorial-card p-3.5 sm:p-5 rounded-lg space-y-2 sm:space-y-2.5 hover:border-dark-text/30 light:hover:border-warm-400 transition-all duration-300 group shadow-xs"
           >
             <div class="w-8 h-8 flex items-center justify-center text-accent-navy group-hover:scale-110 transition-transform">
               <Code class="w-5 h-5" />

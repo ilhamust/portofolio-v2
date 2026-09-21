@@ -37,7 +37,7 @@ export const experienceData = [
     employmentType: 'Internship',
     location: 'Yogyakarta, Indonesia',
     type: 'work',
-    logo: '/logo-nusago.png',
+    logo: '/logo-nusago.webp',
     brandBadge: {
       bg: 'bg-cyan-500/10 light:bg-cyan-50',
       text: 'text-cyan-400 light:text-cyan-700',
@@ -63,7 +63,7 @@ export const experienceData = [
     employmentType: 'Teaching Assistant',
     location: 'Yogyakarta, Indonesia',
     type: 'work',
-    logo: '/logo-unu.png',
+    logo: '/logo-unu.webp',
     brandBadge: {
       bg: 'bg-fuchsia-500/10 light:bg-fuchsia-50',
       text: 'text-fuchsia-400 light:text-fuchsia-700',
@@ -89,7 +89,7 @@ export const experienceData = [
     employmentType: 'Internship',
     location: 'Yogyakarta, Indonesia',
     type: 'work',
-    logo: '/Logo_Shafiec_v2.png',
+    logo: '/Logo_Shafiec_v2.webp',
     brandBadge: {
       bg: 'bg-emerald-500/10 light:bg-emerald-50',
       text: 'text-emerald-400 light:text-emerald-700',

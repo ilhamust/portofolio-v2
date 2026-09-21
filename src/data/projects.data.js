@@ -1,5 +1,5 @@
 // Temporary universal project image placeholder as specified by user
-const defaultProjectImage = '/wms.png'
+const defaultProjectImage = '/wms.webp'
 
 export const projectsData = [
   {
@@ -15,7 +15,7 @@ export const projectsData = [
     role: 'Full Stack Developer Intern',
     focus: 'Flutter Mobile, BLoC State Management, Laravel RESTful API, Clean Architecture',
     tools: ['Flutter', 'Dart', 'BLoC', 'Firebase', 'Dio', 'REST API', 'Clean Architecture'],
-    image: '/nusago.png',
+    image: '/nusago.webp',
     demoUrl: 'https://play.google.com/store/apps/details?id=com.nusago.mobile',
     githubUrl: null,
     featured: true
@@ -33,7 +33,7 @@ export const projectsData = [
     role: 'Full Stack Developer',
     focus: 'Multi-Role RBAC, CI/CD Automated Deployment, Division Workflows',
     tools: ['React.js', 'Express.js', 'MySQL', 'CI/CD', 'GitHub Actions'],
-    image: '/tanaka-management-system.png',
+    image: '/tanaka-management-system.webp',
     demoUrl: null,
     githubUrl: null,
     featured: true
@@ -51,7 +51,7 @@ export const projectsData = [
     role: 'Backend Developer',
     focus: 'FIFO Inventory Tracking, Barcode/QR Scanning, Swagger API Documentation',
     tools: ['Node.js', 'Express.js', 'PostgreSQL', 'FIFO Logic', 'Swagger'],
-    image: '/wms.png',
+    image: '/wms.webp',
     demoUrl: null,
     githubUrl: 'https://gitlab.com/maulidi.adiprasetia/sa-wms-be',
     featured: true
@@ -69,7 +69,7 @@ export const projectsData = [
     role: 'Backend Developer',
     focus: 'Supabase Integration, News & Achievement CRUD, Storage Upload Handling',
     tools: ['Node.js', 'Express.js', 'Supabase', 'PostgreSQL', 'React.js'],
-    image: '/web-pondok.png',
+    image: '/web-pondok.webp',
     demoUrl: 'https://roudlotushsholihin.ponpes.id/',
     githubUrl: null,
     featured: false
@@ -87,7 +87,7 @@ export const projectsData = [
     role: 'Solo Full Stack Developer',
     focus: 'Decoupled Architecture, Service Layer & DTO, Tiptap Editor, XSS Sanitization',
     tools: ['Laravel 13', 'Vue.js 3', 'REST API', 'Tiptap', 'IndexedDB'],
-    image: '/blogcraft.png',
+    image: '/blogcraft.webp',
     demoUrl: null,
     githubUrl: 'https://github.com/ilhamust/blogcraft-cms',
     featured: false
@@ -105,7 +105,7 @@ export const projectsData = [
     role: 'Full Stack Developer',
     focus: 'Next.js, Supabase PostgreSQL RLS, Midtrans Webhooks, Anti-Double-Booking',
     tools: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'Midtrans'],
-    image: '/the-kost.png',
+    image: '/the-kost.webp',
     demoUrl: 'https://dev.thekost.id/',
     githubUrl: null,
     featured: false
@@ -123,7 +123,7 @@ export const projectsData = [
     role: 'Frontend Developer',
     focus: 'Vue.js SPA, Tailwind CSS, AgriTech Education & Insurance Workflows',
     tools: ['Vue.js', 'Tailwind CSS', 'JavaScript', 'Responsive UI'],
-    image: '/gama.png',
+    image: '/gama.webp',
     demoUrl: 'https://gama-project-six.vercel.app/',
     githubUrl: null,
     featured: false
@@ -141,7 +141,7 @@ export const projectsData = [
     role: 'Frontend Developer',
     focus: 'Vanilla JavaScript, DOM Manipulation, LocalStorage Persistence, Search Filter',
     tools: ['JavaScript', 'HTML5', 'CSS3', 'localStorage'],
-    image: '/bookself.png',
+    image: '/bookself.webp',
     demoUrl: 'https://bookself-apps-livid.vercel.app/',
     githubUrl: null,
     featured: false

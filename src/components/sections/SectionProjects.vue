@@ -1,10 +1,10 @@
 <template>
-  <section id="projects" class="min-h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] flex items-center py-5 lg:py-7 border-t border-thin scroll-mt-20 relative select-none overflow-hidden">
+  <section id="projects" class="py-10 sm:py-14 md:py-8 md:min-h-[calc(100vh-80px)] md:flex md:items-center lg:h-[calc(100vh-80px)] lg:py-6 border-t border-thin scroll-mt-20 relative select-none overflow-hidden">
     <BaseContainer size="wide" :padding="true" class="w-full">
-      <div class="space-y-4 sm:space-y-5 lg:space-y-6">
+      <div class="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
         
         <!-- Header: Case Studies Tag + Headline (Left) x "See recent work" Pill Button (Right) -->
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-4">
           <div
             v-motion
             :initial="{ opacity: 0, x: -20 }"
@@ -16,7 +16,7 @@
               :duration="550"
               class="text-[0.6875rem] font-mono text-accent-navy font-semibold uppercase tracking-widest block"
             />
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 tracking-tight leading-none">
+            <h2 class="text-xl sm:text-3xl lg:text-4xl font-sans font-bold text-dark-text light:text-warm-900 tracking-tight leading-none">
               {{ t('projects.headline') }}
             </h2>
           </div>
@@ -29,10 +29,10 @@
             href="https://github.com/ilhamust"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 pl-3.5 pr-2 py-1.5 rounded-full border border-thin text-xs font-mono tracking-wide text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 transition-all duration-200 group bg-dark-surface/60 light:bg-warm-100/60 shrink-0 self-start sm:self-auto shadow-xs"
+            class="inline-flex items-center gap-1.5 sm:gap-2 pl-3 pr-1.5 sm:pl-3.5 sm:pr-2 py-1 sm:py-1.5 rounded-full border border-thin text-[0.6875rem] sm:text-xs font-mono tracking-wide text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 hover:text-dark-text light:hover:text-warm-900 transition-all duration-200 group bg-dark-surface/60 light:bg-warm-100/60 shrink-0 self-start sm:self-auto shadow-xs"
           >
             <span>{{ t('projects.seeRecentWork') }}</span>
-            <span class="w-5 h-5 rounded-full bg-dark-bg light:bg-warm-200 flex items-center justify-center text-[0.6875rem] text-dark-muted light:text-warm-700 group-hover:text-dark-text light:group-hover:text-warm-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+            <span class="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-dark-bg light:bg-warm-200 flex items-center justify-center text-[0.625rem] sm:text-[0.6875rem] text-dark-muted light:text-warm-700 group-hover:text-dark-text light:group-hover:text-warm-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
               ↗
             </span>
           </a>
@@ -45,7 +45,7 @@
           v-motion
           :initial="{ opacity: 0, x: 36, scale: 0.98 }"
           :visible="{ opacity: 1, x: 0, scale: 1, transition: { duration: 550, ease: [0.16, 1, 0.3, 1], delay: 140 } }"
-          class="flex gap-4 lg:gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none py-1 select-none"
+          class="flex gap-3.5 sm:gap-4 lg:gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none py-1 select-none"
           style="scrollbar-width: none; -ms-overflow-style: none;"
         >
           <div
@@ -75,7 +75,7 @@
 
               <!-- Opsi 1: Glassmorphism Frosted Curtain (Menutupi seluruh area mockup dengan kaca buram berkelas) -->
               <div
-                class="absolute inset-0 z-20 bg-dark-bg/85 light:bg-warm-100/90 backdrop-blur-md p-4 sm:p-5 flex flex-col justify-start gap-2.5 sm:gap-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-all duration-300 ease-out"
+                class="absolute inset-0 z-20 bg-dark-bg/85 light:bg-warm-100/90 backdrop-blur-md p-3.5 sm:p-5 flex flex-col justify-start gap-2 sm:gap-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-all duration-300 ease-out"
               >
                 <!-- Top Bar in Curtain: Header -->
                 <div class="flex items-center justify-between shrink-0 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-300">
@@ -93,15 +93,15 @@
             </div>
 
             <!-- 2. Bagian Bawah: Bodi Kartu Stabil (Judul Konsisten Sesuai CV_ILHAM.md) -->
-            <div class="p-4 sm:p-5 flex flex-col justify-between grow space-y-3">
-              <div class="space-y-2">
+            <div class="p-3.5 sm:p-5 flex flex-col justify-between grow space-y-2.5 sm:space-y-3">
+              <div class="space-y-1.5 sm:space-y-2">
                 <!-- Judul Proyek: Sesuai CV_ILHAM.md -->
                 <h3 class="text-xs sm:text-sm lg:text-base font-sans font-bold text-dark-text light:text-warm-900 line-clamp-1 leading-snug">
                   {{ project.title }}
                 </h3>
 
                 <!-- Tech Stack Project Pills -->
-                <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                <div class="flex flex-wrap items-center gap-1 sm:gap-1.5 pt-0.5">
                   <TechBadge
                     v-for="tool in project.tools"
                     :key="tool"
@@ -111,7 +111,7 @@
               </div>
 
               <!-- Action Footer: Repository (GitHub) / Live Demo & Nomor Proyek -->
-              <div class="pt-3 border-t border-thin flex items-center justify-between mt-auto">
+              <div class="pt-2.5 sm:pt-3 border-t border-thin flex items-center justify-between mt-auto">
                 <!-- Case 1: Both GitHub Repo AND Live Demo -->
                 <template v-if="project.githubUrl && project.demoUrl">
                   <a
@@ -212,12 +212,12 @@
           </div>
 
           <!-- Right: Prev / Next Scroll Buttons -->
-          <div class="flex items-center gap-2 font-mono text-xs">
+          <div class="flex items-center gap-1.5 sm:gap-2 font-mono text-xs">
             <button
               type="button"
               @click="scrollPrev"
               :disabled="!canScrollLeft"
-              class="px-3 py-1.5 rounded-full border border-thin bg-dark-surface/60 light:bg-warm-100/80 flex items-center gap-1.5 text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none text-[0.6875rem] uppercase tracking-wider"
+              class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-thin bg-dark-surface/60 light:bg-warm-100/80 flex items-center gap-1 sm:gap-1.5 text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-wider"
               aria-label="Previous projects"
             >
               <span>←</span>
@@ -227,7 +227,7 @@
               type="button"
               @click="scrollNext"
               :disabled="!canScrollRight"
-              class="px-3 py-1.5 rounded-full border border-thin bg-dark-surface/60 light:bg-warm-100/80 flex items-center gap-1.5 text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none text-[0.6875rem] uppercase tracking-wider"
+              class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-thin bg-dark-surface/60 light:bg-warm-100/80 flex items-center gap-1 sm:gap-1.5 text-dark-text light:text-warm-900 hover:border-dark-text/40 light:hover:border-warm-400 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer focus:outline-none text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-wider"
               aria-label="Next projects"
             >
               <span class="hidden sm:inline">{{ t('projects.next') }}</span>

@@ -4,7 +4,7 @@
     :class="[
       'mx-auto w-full transition-colors duration-300',
       sizeClasses[size] || sizeClasses.default,
-      padding ? 'px-6 md:px-12' : '',
+      padding ? 'px-4 sm:px-6 md:px-10 lg:px-12' : '',
       grid ? 'grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12' : ''
     ]"
   >
